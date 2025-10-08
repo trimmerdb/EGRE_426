@@ -1,22 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 10/06/2025 09:49:19 PM
--- Design Name: 
--- Module Name: ALU_tb - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -25,26 +6,20 @@ entity ALU_tb is
 end ALU_tb;
 
 architecture Behavioral of ALU_tb is
-
-    -- Component Under Test
     component ALU
         Port (
-            A, B     : in  STD_LOGIC_VECTOR(31 downto 0);
-            ALUctr   : in  STD_LOGIC_VECTOR(2 downto 0);
-            Result   : out STD_LOGIC_VECTOR(31 downto 0);
+            A, B     : in  unsigned(31 downto 0);
+            ALUctr   : in  unsigned(2 downto 0);
+            Result   : out unsigned(31 downto 0);
             Zero, Overflow, Carryout : out STD_LOGIC
         );
     end component;
 
-    -- Signals
-    signal A, B, Result : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
-    signal ALUctr : STD_LOGIC_VECTOR(2 downto 0) := (others => '0');
+    signal A, B, Result : unsigned(31 downto 0) := "00000000000000000000000000000000";
+    signal ALUctr : unsigned(2 downto 0) := "000";
     signal Zero, Overflow, Carryout : STD_LOGIC := '0';
 
 begin
-    --------------------------------------------------------------------
-    -- DUT Instance
-    --------------------------------------------------------------------
     DUT: ALU
         port map (
             A => A,
@@ -56,93 +31,56 @@ begin
             Carryout => Carryout
         );
 
-    --------------------------------------------------------------------
-    -- Stimulus Process
-    --------------------------------------------------------------------
     stim_proc: process
     begin
-        ----------------------------------------------------------------
-        -- Test mode "000" (ADD)
-        ----------------------------------------------------------------
+
+        -- ADD
         ALUctr <= "000";
-        A <= x"00000005"; B <= x"00000003"; wait for 10 ns;
+        A <= to_unsigned(5, 32); B <= to_unsigned(3, 32); wait for 10 ns;
+        report "ADD: 5+3=" & integer'image(to_integer(Result));
 
 
-        A <= x"7FFFFFFF"; B <= x"00000001"; wait for 10 ns;
-
-
-        A <= x"11111111"; B <= x"22222222"; wait for 10 ns;
-
-
-        ----------------------------------------------------------------
-        -- Test mode "001" (SUB)
-        ----------------------------------------------------------------
+        -- SUB
         ALUctr <= "001";
-        A <= x"0000000A"; B <= x"00000003"; wait for 10 ns;
+        A <= to_unsigned(10, 32); B <= to_unsigned(3, 32); wait for 10 ns;
+        report "SUB: 10-3=" & integer'image(to_integer(Result));
 
 
-        A <= x"00000003"; B <= x"0000000A"; wait for 10 ns;
-
-        A <= x"FFFFFFFF"; B <= x"00000001"; wait for 10 ns;
-
-        ----------------------------------------------------------------
-        -- Test mode "010" (AND)
-        ----------------------------------------------------------------
+        -- AND
         ALUctr <= "010";
         A <= x"F0F0F0F0"; B <= x"0F0F0F0F"; wait for 10 ns;
+        report "AND Result: " & integer'image(to_integer(Result));
 
 
-        A <= x"AAAAAAAA"; B <= x"55555555"; wait for 10 ns;
-        A <= x"FFFFFFFF"; B <= x"0000FFFF"; wait for 10 ns;
-
-        ----------------------------------------------------------------
-        -- Test mode "011" (OR)
-        ----------------------------------------------------------------
+        -- OR
         ALUctr <= "011";
         A <= x"F0F0F0F0"; B <= x"0F0F0F0F"; wait for 10 ns;
+        report "OR Result: " & integer'image(to_integer(Result));
 
-        A <= x"AAAA0000"; B <= x"0000BBBB"; wait for 10 ns;
-        A <= x"00000000"; B <= x"FFFFFFFF"; wait for 10 ns;
 
-        ----------------------------------------------------------------
-        -- Test mode "100" (Logical Left Shift)
-        ----------------------------------------------------------------
+        -- LSHIFT
         ALUctr <= "100";
-        A <= x"00000001"; B <= x"00000000"; wait for 10 ns;
-
-        A <= x"80000000"; wait for 10 ns;
-        A <= x"0F0F0F0F"; wait for 10 ns;
-
-        ----------------------------------------------------------------
-        -- Test mode "101" (Logical Right Shift)
-        ----------------------------------------------------------------
+        A <= to_unsigned(1, 32); wait for 10 ns;
+        report "LSHIFT: " & integer'image(to_integer(Result));
+        
+        
+        -- RSHIFT
         ALUctr <= "101";
-        A <= x"00000002"; B <= x"00000000"; wait for 10 ns;
+        A <= to_unsigned(2, 32); wait for 10 ns;
+        report "RSHIFT: " & integer'image(to_integer(Result));
 
-        A <= x"80000000"; wait for 10 ns;
-        A <= x"FFFFFFFF"; wait for 10 ns;
 
-        ----------------------------------------------------------------
-        -- Test mode "110" (Arithmetic Left Shift)
-        ----------------------------------------------------------------
+        -- Arith LSHIFT
         ALUctr <= "110";
-        A <= x"00000001"; B <= x"00000000"; wait for 10 ns;
-
-        A <= x"80000000"; wait for 10 ns;
-        A <= x"7FFFFFFF"; wait for 10 ns;
-
-        ----------------------------------------------------------------
-        -- Test mode "111" (Arithmetic Right Shift)
-        ----------------------------------------------------------------
+        A <= B"1111_1111_1111_1111_1111_1111_1111_1011"; wait for 10 ns;
+        report "RSHIFT: " & integer'image(to_integer(Result));
+      
+      
+        -- Arith RSHIFT
         ALUctr <= "111";
-        A <= x"80000000"; B <= x"00000000"; wait for 10 ns;
+        A <= B"1111_1111_1111_1111_1111_1111_1111_1011"; wait for 10 ns;
+        report "RSHIFT: " & integer'image(to_integer(Result));
 
-        A <= x"00000002"; wait for 10 ns;
-        A <= x"FFFFFFFF"; wait for 10 ns;
-
-        ----------------------------------------------------------------
-        -- End simulation
-        ----------------------------------------------------------------
         wait;
     end process;
 end Behavioral;

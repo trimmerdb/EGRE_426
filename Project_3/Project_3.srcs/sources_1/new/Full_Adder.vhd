@@ -5,17 +5,7 @@
 -- Create Date: 10/06/2025 08:18:16 PM
 -- Design Name: 
 -- Module Name: Full_Adder - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
+-- Description: 1-bit full adder
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

@@ -1,21 +1,11 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Dustin Trimmer
 -- 
 -- Create Date: 10/06/2025 09:43:31 PM
--- Design Name: 
--- Module Name: registers_tb - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
+-- Design Name: Registers Testbench
+-- Module Name: Registers_tb - Behavioral
+-- Description: Testbench for 32x32 unsigned register file
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -29,9 +19,9 @@ architecture Behavioral of Registers_tb is
     -- DUT I/O signals
     signal clk   : STD_LOGIC := '0';
     signal RegWr : STD_LOGIC := '0';
-    signal Ra, Rb, Rw : STD_LOGIC_VECTOR(4 downto 0) := (others => '0');
-    signal busW  : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
-    signal busA, busB : STD_LOGIC_VECTOR(31 downto 0);
+    signal Ra, Rb, Rw : unsigned(4 downto 0) := (others => '0');
+    signal busW  : unsigned(31 downto 0) := (others => '0');
+    signal busA, busB : unsigned(31 downto 0);
 
     -- Clock period constant
     constant clk_period : time := 10 ns;
@@ -41,9 +31,9 @@ architecture Behavioral of Registers_tb is
         Port (
             clk    : in  STD_LOGIC;
             RegWr  : in  STD_LOGIC;
-            Ra, Rb, Rw : in  STD_LOGIC_VECTOR(4 downto 0);
-            busW   : in  STD_LOGIC_VECTOR(31 downto 0);
-            busA, busB : out STD_LOGIC_VECTOR(31 downto 0)
+            Ra, Rb, Rw : in  unsigned(4 downto 0);
+            busW   : in  unsigned(31 downto 0);
+            busA, busB : out unsigned(31 downto 0)
         );
     end component;
 
@@ -80,12 +70,12 @@ begin
         -- Test 1: Write to R1 and read it back
         --------------------------------------------------------------------
         RegWr <= '1';
-        Rw <= "00001";                      -- Write to register 1
+        Rw <= to_unsigned(1, 5);            -- Write to register 1
         busW <= x"DEADBEEF";                -- Write data
         wait for clk_period;                -- Rising edge to latch write
 
         RegWr <= '0';                       -- Disable writing
-        Ra <= "00001";                      -- Read register 1
+        Ra <= to_unsigned(1, 5);            -- Read register 1
         wait for 5 ns;
         assert (busA = x"DEADBEEF")
             report "FAIL: R1 readback mismatch!" severity error;
@@ -94,13 +84,13 @@ begin
         -- Test 2: Write to R2, read from R1 and R2
         --------------------------------------------------------------------
         RegWr <= '1';
-        Rw <= "00010";                      -- Write to register 2
+        Rw <= to_unsigned(2, 5);            -- Write to register 2
         busW <= x"12345678";
         wait for clk_period;
 
         RegWr <= '0';
-        Ra <= "00001";                      -- Read R1
-        Rb <= "00010";                      -- Read R2
+        Ra <= to_unsigned(1, 5);            -- Read R1
+        Rb <= to_unsigned(2, 5);            -- Read R2
         wait for 5 ns;
         assert (busA = x"DEADBEEF" and busB = x"12345678")
             report "FAIL: Incorrect values on busA/busB!" severity error;
@@ -109,11 +99,11 @@ begin
         -- Test 3: Try to write when RegWr='0'
         --------------------------------------------------------------------
         RegWr <= '0';
-        Rw <= "00010";
+        Rw <= to_unsigned(2, 5);
         busW <= x"FFFFFFFF";
         wait for clk_period;
 
-        Ra <= "00010";
+        Ra <= to_unsigned(2, 5);
         wait for 5 ns;
         assert (busA = x"12345678")
             report "FAIL: Write occurred when RegWr='0'!" severity error;

@@ -5,27 +5,18 @@
 -- Create Date: 10/06/2025 08:09:03 PM
 -- Design Name: 
 -- Module Name: nBitAdder - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
+-- Description: N-bit ripple carry adder built from Full_Adder
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 entity nBitAdder is
     generic ( N : integer := 32 );
     Port (
-        A, B : in  STD_LOGIC_VECTOR(N-1 downto 0);
+        A, B : in  unsigned(N-1 downto 0);
         Cin  : in  STD_LOGIC;
-        Sum  : out STD_LOGIC_VECTOR(N-1 downto 0);
+        Sum  : out unsigned(N-1 downto 0);
         Cout : out STD_LOGIC
     );
 end nBitAdder;
@@ -46,8 +37,8 @@ begin
     gen_adders : for i in 0 to N-1 generate
         FA: Full_Adder
             port map (
-                a => A(i),
-                b => B(i),
+                a   => A(i),
+                b   => B(i),
                 cin => carry(i),
                 sum => Sum(i),
                 cout => carry(i+1)

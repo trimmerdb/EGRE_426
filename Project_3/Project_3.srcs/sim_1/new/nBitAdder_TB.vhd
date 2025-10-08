@@ -1,22 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 10/06/2025 09:38:30 PM
--- Design Name: 
--- Module Name: nBitAdder_TB - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -26,29 +7,26 @@ end nBitAdder_tb;
 
 architecture Behavioral of nBitAdder_tb is
 
-    -- Generic width for the adder
     constant N : integer := 32;
 
-    -- DUT signals
-    signal A, B  : STD_LOGIC_VECTOR(N-1 downto 0) := (others => '0');
+    -- Match the DUT's port types exactly
+    signal A, B  : unsigned(N-1 downto 0) := (others => '0');
     signal Cin   : STD_LOGIC := '0';
-    signal Sum   : STD_LOGIC_VECTOR(N-1 downto 0);
+    signal Sum   : unsigned(N-1 downto 0);
     signal Cout  : STD_LOGIC;
 
-    -- Component declaration for DUT
     component nBitAdder
         generic ( N : integer := 32 );
         Port (
-            A, B : in  STD_LOGIC_VECTOR(N-1 downto 0);
+            A, B : in  unsigned(N-1 downto 0);
             Cin  : in  STD_LOGIC;
-            Sum  : out STD_LOGIC_VECTOR(N-1 downto 0);
+            Sum  : out unsigned(N-1 downto 0);
             Cout : out STD_LOGIC
         );
     end component;
 
 begin
 
-    -- Instantiate the Unit Under Test (UUT)
     uut: nBitAdder
         generic map ( N => N )
         port map (
@@ -59,51 +37,38 @@ begin
             Cout => Cout
         );
 
-    -- Stimulus process
     stim_proc: process
     begin
-
-        --------------------------------------------------------------------
-        -- Test Case 1: Small numbers, no carry-in
-        --------------------------------------------------------------------
-        A   <= std_logic_vector(to_unsigned(5, N));   -- 0x00000005
-        B   <= std_logic_vector(to_unsigned(3, N));   -- 0x00000003
+        -- Test Case 1
+        A   <= to_unsigned(5, N);
+        B   <= to_unsigned(3, N);
         Cin <= '0';
         wait for 20 ns;
 
-        --------------------------------------------------------------------
-        -- Test Case 2: Small numbers with carry-in
-        --------------------------------------------------------------------
-        A   <= std_logic_vector(to_unsigned(5, N));   -- 0x00000005
-        B   <= std_logic_vector(to_unsigned(3, N));   -- 0x00000003
+        -- Test Case 2
+        A   <= to_unsigned(5, N);
+        B   <= to_unsigned(3, N);
         Cin <= '1';
         wait for 20 ns;
 
-        --------------------------------------------------------------------
-        -- Test Case 3: Mid-range numbers
-        --------------------------------------------------------------------
-        A   <= std_logic_vector(to_unsigned(100000, N));
-        B   <= std_logic_vector(to_unsigned(250000, N));
+        -- Test Case 3
+        A   <= to_unsigned(100000, N);
+        B   <= to_unsigned(250000, N);
         Cin <= '0';
         wait for 20 ns;
 
-        --------------------------------------------------------------------
-        -- Test Case 4: Large numbers (overflow within 32 bits)
-        --------------------------------------------------------------------
-        A   <= std_logic_vector(to_unsigned(2**31 - 1, N)); -- Max positive signed int
-        B   <= std_logic_vector(to_unsigned(1, N));         -- Add 1 → overflow
+        -- Test Case 4
+        A   <= to_unsigned(2**31 - 1, N);
+        B   <= to_unsigned(1, N);
         Cin <= '0';
         wait for 20 ns;
 
-        --------------------------------------------------------------------
-        -- Test Case 5: All ones + 1 (Cout should be 1)
-        --------------------------------------------------------------------
-        A   <= (others => '1');  -- 0xFFFFFFFF
-        B   <= (others => '0');  -- 0x00000000
+        -- Test Case 5
+        A   <= (others => '1');
+        B   <= (others => '0');
         Cin <= '1';
         wait for 20 ns;
 
-        -- End simulation
         wait;
     end process;
 
