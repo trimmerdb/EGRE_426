@@ -1,12 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: Dustin Trimmer
--- 
--- Create Date: 10/06/2025 08:09:03 PM
--- Design Name: 
--- Module Name: Registers - Behavioral
--- Description: 32x32 register file using unsigned for arithmetic compatibility
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;

@@ -8,8 +8,6 @@ end nBitAdder_tb;
 architecture Behavioral of nBitAdder_tb is
 
     constant N : integer := 32;
-
-    -- Match the DUT's port types exactly
     signal A, B  : unsigned(N-1 downto 0) := (others => '0');
     signal Cin   : STD_LOGIC := '0';
     signal Sum   : unsigned(N-1 downto 0);

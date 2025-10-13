@@ -1,12 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: Dustin Trimmer
--- 
--- Create Date: 10/06/2025 08:09:03 PM
--- Design Name: Top-Level Integration
--- Module Name: Top_Level - Behavioral
--- Description: Integrates Registers and ALU for top-level testing
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -16,7 +7,7 @@ entity Top_Level is
         clk       : in  STD_LOGIC;
         RegWr     : in  STD_LOGIC;
         Rd, Rs, Rt : in  unsigned(4 downto 0);
-        ALUctr    : in  unsigned(2 downto 0);
+        ALUctr    : in  unsigned(3 downto 0);
         Zero, Overflow, Carryout : out STD_LOGIC;
         Result    : out unsigned(31 downto 0)
     );
@@ -40,7 +31,7 @@ architecture Behavioral of Top_Level is
         generic ( N : integer := 32 );
         Port (
             A, B    : in  unsigned(31 downto 0);
-            ALUctr  : in  unsigned(2 downto 0);
+            ALUctr  : in  unsigned(3 downto 0);
             Result  : out unsigned(31 downto 0);
             Zero, Overflow, Carryout : out STD_LOGIC
         );

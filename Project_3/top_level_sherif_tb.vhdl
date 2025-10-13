@@ -7,13 +7,13 @@ end entity;
 
 architecture behavior of top_level_sherif_tb is
   constant TIME_DELAY : time := 20 ns;
-  constant NUM_VALS : integer := 2;
+  constant NUM_VALS : integer := 9;
 
   type RegWr_array is array(0 to (NUM_VALS - 1)) of std_logic;
-  type Rd_array is array(0 to (NUM_VALS - 1)) of unsigned(31 downto 0);
-  type Rs_array is array(0 to (NUM_VALS - 1)) of unsigned(31 downto 0);
-  type Rt_array is array(0 to (NUM_VALS - 1)) of unsigned(31 downto 0);
-  type ALUctr_array is array(0 to (NUM_VALS - 1)) of unsigned(2 downto 0);
+  type Rd_array is array(0 to (NUM_VALS - 1)) of unsigned(4 downto 0);
+  type Rs_array is array(0 to (NUM_VALS - 1)) of unsigned(4 downto 0);
+  type Rt_array is array(0 to (NUM_VALS - 1)) of unsigned(4 downto 0);
+  type ALUctr_array is array(0 to (NUM_VALS - 1)) of unsigned(3 downto 0);
   type Zero_array is array(0 to (NUM_VALS - 1)) of std_logic;
   type Overflow_array is array(0 to (NUM_VALS - 1)) of std_logic;
   type Carryout_array is array(0 to (NUM_VALS - 1)) of std_logic;
@@ -21,23 +21,91 @@ architecture behavior of top_level_sherif_tb is
 
   -- Expected input and output data.
   -- You need to correct and add more values here based on your design
-  constant RegWr_vals : RegWr_array := ('1','1');
-  constant Rd_vals : Rd_array := ("11110","11110");
-  constant Rs_vals : Rs_array := ("00000","00010");
-  constant Rt_vals : Rt_array := ("00001","00001");
-  constant ALUctr_vals : ALUctr_array := ("011","100");
-  constant Zero_vals : Zero_array := ('1','0');
-  constant Overflow_vals : Overflow_array := ('1','0');
-  constant Carryout_vals : Carryout_array := ('1','0');
-  constant Result_vals : Result_array := ("11111111111111111111111111111111",
-                                          "00000000000000000000000000000000");
+  constant RegWr_vals : RegWr_array := (
+    '1','1','1','1','1','1','1','1','1'
+  );
+
+  constant Rd_vals : Rd_array := (
+    "11110","11110","11110","11110","11110",
+    "11110","11110","11110","11110"
+  );
+
+  constant Rs_vals : Rs_array := (
+    "00000","00000","00000","00000","00000",
+    "00000","00000","00000","00000"
+  );
+
+  constant Rt_vals : Rt_array := (
+    "00001","00001","00001","00001","00001",
+    "00001","00001","00001","00001"
+  );
+
+constant ALUctr_vals : ALUctr_array := (
+    "0000", -- ADD
+    "0001", -- SUB
+    "0010", -- AND
+    "0011", -- OR
+    "0100", -- Logical Left Shift
+    "0101", -- Logical Right Shift
+    "0110", -- Arithmetic Left Shift
+    "0111", -- Arithmetic Right Shift
+    "1000"  -- Multiplication
+);
+
+constant Zero_vals : Zero_array := (
+    '0', -- ADD (not zero)
+    '1', -- SUB (zero)
+    '0', -- AND (not zero)
+    '0', -- OR (not zero)
+    '0', -- Logical Left Shift
+    '0', -- Logical Right Shift
+    '0', -- Arithmetic Left Shift
+    '0', -- Arithmetic Right Shift
+    '0'  -- Multiplication
+);
+
+constant Overflow_vals : Overflow_array := (
+    '0', -- ADD 
+    '0', -- SUB
+    '0', -- AND
+    '0', -- OR
+    '0', -- Logical Left Shift
+    '0', -- Logical Right Shift
+    '0', -- Arithmetic Left Shift
+    '0', -- Arithmetic Right Shift
+    '0'  -- Multiplication
+);
+
+constant Carryout_vals : Carryout_array := (
+    '1', -- ADD
+    '0', -- SUB
+    '0', -- AND
+    '0', -- OR
+    '0', -- Logical Left Shift
+    '0',   -- Logical Right Shift
+    '0', -- Arithmetic Left Shift
+    '0',   -- Arithmetic Right Shift
+    '0' -- Multiplication
+);
+
+constant Result_vals : Result_array := (
+    x"FFFFFFFE", -- ADD
+    x"00000000", -- SUB
+    x"FFFFFFFF", -- AND
+    x"FFFFFFFF", -- OR
+    x"FFFFFFFE", -- Logical Left Shift
+    x"7FFFFFFF", -- Logical Right Shift
+    x"FFFFFFFE", -- Arithmetic Left Shift
+    x"FFFFFFFF", -- Arithmetic Right Shift
+    x"00000001"  -- Multiplication result placeholder
+);
 
   signal clk_sig : std_logic := '0';
   signal RegWr_sig : std_logic;
   signal Rd_sig : unsigned(4 downto 0);
   signal Rs_sig : unsigned(4 downto 0);
   signal Rt_sig : unsigned(4 downto 0);
-  signal ALUctr_sig : unsigned(2 downto 0);
+  signal ALUctr_sig : unsigned(3 downto 0);
   signal Zero_sig : std_logic;
   signal Overflow_sig : std_logic;
   signal Carryout_sig : std_logic;
@@ -45,7 +113,7 @@ architecture behavior of top_level_sherif_tb is
 
 begin
 
-  DUT : entity work.top_level(behavior)
+  DUT : entity work.top_level(Behavioral)
     port map(clk => clk_sig,
              RegWr => RegWr_sig,
              Rd => Rd_sig,

@@ -1,7 +1,7 @@
-Running: xsim.dir/nBitAdder_tb_behav/xsimk.exe -simmode gui -wdb nBitAdder_tb_behav.wdb -simrunnum 0 -socket 60618
+Running: xsim.dir/nBitAdder_tb_behav/xsimk.exe -simmode gui -wdb nBitAdder_tb_behav.wdb -simrunnum 0 -socket 61253
 Design successfully loaded
-Design Loading Memory Usage: 10772 KB (Peak: 10772 KB)
-Design Loading CPU Usage: 31 ms
+Design Loading Memory Usage: 10776 KB (Peak: 10776 KB)
+Design Loading CPU Usage: 108 ms
 Simulation completed
-Simulation Memory Usage: 11612 KB (Peak: 11612 KB)
-Simulation CPU Usage: 61 ms
+Simulation Memory Usage: 11616 KB (Peak: 11616 KB)
+Simulation CPU Usage: 281 ms
