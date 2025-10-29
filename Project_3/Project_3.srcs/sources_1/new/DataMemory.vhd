@@ -10,14 +10,14 @@ entity DataMemory is
         clk      : in  std_logic;
         MemRead  : in  std_logic;
         MemWrite : in  std_logic;
-        Address  : in  unsigned(31 downto 0);
-        WriteData: in  unsigned(31 downto 0);
-        ReadData : out unsigned(31 downto 0)
+        Address  : in  unsigned(15 downto 0);
+        WriteData: in  unsigned(15 downto 0);
+        ReadData : out unsigned(15 downto 0)
     );
 end entity;
 
 architecture Behavioral of DataMemory is
-    type mem_array is array (0 to MEM_SIZE-1) of unsigned(31 downto 0);
+    type mem_array is array (0 to MEM_SIZE-1) of unsigned(15 downto 0);
     signal memory : mem_array := (others => (others => '0'));
     signal addr_index : integer range 0 to MEM_SIZE-1;
 begin

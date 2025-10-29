@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity nBitAdder is
-    generic ( N : integer := 32 );
+    generic ( N : integer := 15 );
     Port (
         A, B : in  unsigned(N-1 downto 0);
         Cin  : in  STD_LOGIC;

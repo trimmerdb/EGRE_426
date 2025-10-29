@@ -9,30 +9,30 @@ entity Top_Level is
         Rd, Rs, Rt : in  unsigned(4 downto 0);
         ALUctr    : in  unsigned(3 downto 0);
         Zero, Overflow, Carryout : out STD_LOGIC;
-        Result    : out unsigned(31 downto 0)
+        Result    : out unsigned(15 downto 0)
     );
 end Top_Level;
 
 architecture Behavioral of Top_Level is
 
-    signal busA, busB, busW : unsigned(31 downto 0); -- Internal buses
+    signal busA, busB, busW : unsigned(15 downto 0); -- Internal buses
 
     component Registers -- Component: Registers
         Port (
             clk    : in  STD_LOGIC;
             RegWr  : in  STD_LOGIC;
             Ra, Rb, Rw : in  unsigned(4 downto 0);
-            busW   : in  unsigned(31 downto 0);
-            busA, busB : out unsigned(31 downto 0)
+            busW   : in  unsigned(15 downto 0);
+            busA, busB : out unsigned(15 downto 0)
         );
     end component;
 
     component ALU -- Component: ALU
-        generic ( N : integer := 32 );
+        generic ( N : integer := 16 );
         Port (
-            A, B    : in  unsigned(31 downto 0);
+            A, B    : in  unsigned(15 downto 0);
             ALUctr  : in  unsigned(3 downto 0);
-            Result  : out unsigned(31 downto 0);
+            Result  : out unsigned(15 downto 0);
             Zero, Overflow, Carryout : out STD_LOGIC
         );
     end component;
@@ -51,7 +51,7 @@ begin
         );
 
     ALU0: ALU --My Alu
-        generic map ( N => 32 )
+        generic map ( N => 16 )
         port map (
             A        => busA,
             B        => busB,

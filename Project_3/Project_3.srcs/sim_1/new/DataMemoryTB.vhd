@@ -14,18 +14,18 @@ architecture tb of DataMemory_tb is
             clk       : in  std_logic;
             MemRead   : in  std_logic;
             MemWrite  : in  std_logic;
-            Address   : in  unsigned(31 downto 0);
-            WriteData : in  unsigned(31 downto 0);
-            ReadData  : out unsigned(31 downto 0)
+            Address   : in  unsigned(15 downto 0);
+            WriteData : in  unsigned(15 downto 0);
+            ReadData  : out unsigned(15 downto 0)
         );
     end component;
 
     signal clk       : std_logic := '0';
     signal MemRead   : std_logic := '0';
     signal MemWrite  : std_logic := '0';
-    signal Address   : unsigned(31 downto 0) := (others => '0');
-    signal WriteData : unsigned(31 downto 0) := (others => '0');
-    signal ReadData  : unsigned(31 downto 0);
+    signal Address   : unsigned(15 downto 0) := (others => '0');
+    signal WriteData : unsigned(15 downto 0) := (others => '0');
+    signal ReadData  : unsigned(15 downto 0);
 
     constant CLK_PERIOD : time := 10 ns;
 

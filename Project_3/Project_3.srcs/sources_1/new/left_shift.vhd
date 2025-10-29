@@ -4,8 +4,8 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity ShiftLeft2 is
     generic (
-        WIDTH_IN  : integer := 32; 
-        WIDTH_OUT : integer := 32   
+        WIDTH_IN  : integer := 16; 
+        WIDTH_OUT : integer := 16   
     );
     port (
         data_in  : in  unsigned(WIDTH_IN-1 downto 0);
