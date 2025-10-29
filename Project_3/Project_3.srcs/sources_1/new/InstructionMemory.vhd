@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity InstructionMemory is
     generic (
-        ADDR_WIDTH : integer := 8
+        ADDR_WIDTH : integer := 16
     );
     port (
         clk   : in  std_logic;
@@ -14,7 +14,7 @@ entity InstructionMemory is
 end entity InstructionMemory;
 
 architecture Behavioral of InstructionMemory is
-    constant DEPTH : integer := 2 ** ADDR_WIDTH;
+    constant DEPTH : integer := 256;
 
     type rom_type is array (0 to DEPTH - 1) of unsigned(15 downto 0);
 

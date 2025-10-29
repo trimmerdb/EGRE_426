@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 entity MUX2to1 is
     generic (
@@ -8,7 +9,7 @@ entity MUX2to1 is
     port (
         A   : in  unsigned(N-1 downto 0);
         B   : in  unsigned(N-1 downto 0);
-        Sel : in  Std_logic;
+        Sel : in  std_logic;
         Y   : out unsigned(N-1 downto 0)
     );
 end entity;
