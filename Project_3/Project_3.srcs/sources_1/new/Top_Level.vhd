@@ -5,6 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity Top_Level is
     Port (
         clk       : in  STD_LOGIC;
+        Reset     : in STD_LOGIC;
         RegWr     : in  STD_LOGIC;
         Rd, Rs, Rt : in  unsigned(2 downto 0);
         ALUctr    : in  unsigned(3 downto 0);
@@ -14,8 +15,19 @@ entity Top_Level is
 end Top_Level;
 
 architecture Behavioral of Top_Level is
-
+    signal PCIn, PCOut : unsigned(15 downto 0);
+    signal adderOut : unsigned(15 downto 0);
+    signal instrOut : unsigned(15 downto 0);
+    signal Branch, MemtoReg, memWrite, memRead : std_logic;
+    signal RegDst, ALUSrc, ALUOp, RegWrite : unsigned(15 downto 0);
     signal busA, busB, busW : unsigned(15 downto 0); -- Internal buses
+    signal signExtendOut : unsigned(15 downto 0);
+    signal mux1Out : unsigned(15 downto 0);
+    signal shiftOut : unsigned(15 downto 0);
+    signal j_out : unsigned(15 downto 0);
+    signal andOut : std_logic;
+    signal dataMemOut : unsigned(15 downto 0);
+    signal mux3Out : unsigned(15 downto 0) := RegWr;
 
     component Registers -- Component: Registers
         Port (
@@ -67,8 +79,8 @@ architecture Behavioral of Top_Level is
     component SignExtend -- Component: Sign Extender
         generic ( N : integer := 16 );
             port (
-        In16  : in  unsigned(5 downto 0);
-        Out32 : out unsigned(N-1 downto 0)
+        In6  : in  unsigned(5 downto 0);
+        Out16 : out unsigned(N-1 downto 0)
     );
     end component;
     
@@ -103,18 +115,59 @@ architecture Behavioral of Top_Level is
     end component;
 
 begin
+    PC: ProgramCounter
+        port map(
+            clk => clk,
+            rst => Reset,
+            pc_in => PCIn,
+            pc_out => PCOut
+        );
+    
+    PCADDER0 : PCAdder
+        port map(
+            pc_in => PCOut,
+            pc_out => adderOut
+        );
+        
+    INSTRUCTION_MEMORY : InstructionMemory
+        port map(
+            clk => clk,
+            addr => PCOut,
+            instr => instrOut
+        );
+
     RF: Registers --My Register File
         port map (
             clk   => clk,
-            RegWr => RegWr,
-            Ra    => Rs,
-            Rb    => Rt,
-            Rw    => Rd,
+            RegWr => mux3Out, --<-- from mux
+            Ra    => instrOut(11 downto 9),
+            Rb    => instrOut(8 downto 6),
+            Rw    => instrOut(5 downto 3),
             busW  => busW,
             busA  => busA,
             busB  => busB
         );
-
+    
+    SIGN_XTDR : SignExtend
+        port map(
+            In6 => instrOut(5 downto 0),
+            out16 => signExtendOut
+        );
+   
+    MUX1 : Mux2to1-- MUX0 RESERVED FOR register input
+        port map(
+            A => busB,
+            B => signExtendOut,
+            Sel => ALUSrc,
+            Y => mux1Out
+        );
+        
+    LSHIFT : ShiftLeft2
+        port map(
+            data_in => signExtendOut,
+            data_out => shiftOut
+        );
+   
     ALU0: ALU --My Alu
         generic map ( N => 16 )
         port map (
@@ -126,7 +179,47 @@ begin
             Overflow => Overflow,
             Carryout => Carryout
         );
-
+        
+    ALU1: ALU --My Alu
+        generic map ( N => 16 )
+        port map (
+            A        => adderOut,
+            B        => shiftOut,
+            ALUctr   => "0000",
+            Result   => j_out,
+            Zero     => open,
+            Overflow => open,
+            Carryout => open
+        );
+    
+    andOut <= Branch and Zero;
+    
+    DATA_MEMORY : dataMemory
+        port map(
+            clk => clk,
+            memRead => memRead,
+            memWrite => memWrite,
+            Address => busW,
+            WriteData => busB,
+            ReadData => dataMemOut
+        );
+     
+     MUX2 : Mux2to1
+        port map(
+            A => adderOut,
+            B => j_out,
+            Sel => andOut,
+            Y => PCIn
+        );
+    
+    MUX3 : Mux2to1
+        port map(
+            A => dataMemOut,
+            B => busW,
+            Sel => MemtoReg,
+            Y => mux3Out
+        );
+    
     Result <= busW; --Final Result
 
 end Behavioral;
