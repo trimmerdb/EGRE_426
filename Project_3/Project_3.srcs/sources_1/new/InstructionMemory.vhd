@@ -1,0 +1,39 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity InstructionMemory is
+    generic (
+        ADDR_WIDTH : integer := 8
+    );
+    port (
+        clk   : in  std_logic;
+        addr  : in  std_logic_vector(15 downto 0);
+        instr : out std_logic_vector(15 downto 0)
+    );
+end entity InstructionMemory;
+
+architecture Behavioral of InstructionMemory is
+    constant DEPTH : integer := 2 ** ADDR_WIDTH;
+
+    type rom_type is array (0 to DEPTH - 1) of std_logic_vector(15 downto 0);
+
+    signal ROM : rom_type := (
+        others => (others => '0')
+    );
+
+begin
+    process(clk)
+        variable index : integer;
+    begin
+        if rising_edge(clk) then
+            index := to_integer(unsigned(addr));
+            if index >= 0 and index < DEPTH then
+                instr <= ROM(index);
+            else
+                instr <= (others => '0');
+            end if;
+        end if;
+    end process;
+
+end architecture Behavioral;
