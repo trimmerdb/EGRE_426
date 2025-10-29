@@ -6,10 +6,10 @@ entity MUX2to1 is
         N : integer := 16
     );
     port (
-        A   : in  STD_LOGIC_VECTOR(N-1 downto 0);
-        B   : in  STD_LOGIC_VECTOR(N-1 downto 0);
-        Sel : in  STD_LOGIC;
-        Y   : out STD_LOGIC_VECTOR(N-1 downto 0)
+        A   : in  unsigned(N-1 downto 0);
+        B   : in  unsigned(N-1 downto 0);
+        Sel : in  Std_logic;
+        Y   : out unsigned(N-1 downto 0)
     );
 end entity;
 

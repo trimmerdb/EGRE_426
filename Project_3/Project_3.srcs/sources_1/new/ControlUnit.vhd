@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity ControlUnit is
     port (
-        instr     : in  std_logic_vector(15 downto 0);
+        instr     : in  unsigned(15 downto 0);
         RegDst    : out std_logic;
         ALUSrc    : out std_logic;
         MemToReg  : out std_logic;
@@ -13,13 +13,13 @@ entity ControlUnit is
         MemWrite  : out std_logic;
         Branch    : out std_logic;
         Jump      : out std_logic;
-        ALUOp     : out std_logic_vector(3 downto 0)
+        ALUOp     : out unsigned(3 downto 0)
     );
 end entity ControlUnit;
 
 architecture Behavioral of ControlUnit is
-    signal opcode : std_logic_vector(3 downto 0);
-    signal func   : std_logic_vector(2 downto 0);
+    signal opcode : unsigned(3 downto 0);
+    signal func   : unsigned(2 downto 0);
 begin
     opcode <= instr(15 downto 12);
     func   <= instr(2 downto 0);

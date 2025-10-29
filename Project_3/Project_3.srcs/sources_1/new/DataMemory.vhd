@@ -7,17 +7,17 @@ entity DataMemory is
         MEM_SIZE : integer := 256  
     );
     port (
-        clk      : in  STD_LOGIC;
-        MemRead  : in  STD_LOGIC;
-        MemWrite : in  STD_LOGIC;
-        Address  : in  STD_LOGIC_VECTOR(31 downto 0);
-        WriteData: in  STD_LOGIC_VECTOR(31 downto 0);
-        ReadData : out STD_LOGIC_VECTOR(31 downto 0)
+        clk      : in  std_logic;
+        MemRead  : in  std_logic;
+        MemWrite : in  std_logic;
+        Address  : in  unsigned(31 downto 0);
+        WriteData: in  unsigned(31 downto 0);
+        ReadData : out unsigned(31 downto 0)
     );
 end entity;
 
 architecture Behavioral of DataMemory is
-    type mem_array is array (0 to MEM_SIZE-1) of STD_LOGIC_VECTOR(31 downto 0);
+    type mem_array is array (0 to MEM_SIZE-1) of unsigned(31 downto 0);
     signal memory : mem_array := (others => (others => '0'));
     signal addr_index : integer range 0 to MEM_SIZE-1;
 begin

@@ -8,15 +8,15 @@ entity InstructionMemory is
     );
     port (
         clk   : in  std_logic;
-        addr  : in  std_logic_vector(15 downto 0);
-        instr : out std_logic_vector(15 downto 0)
+        addr  : in  unsigned(15 downto 0);
+        instr : out unsigned(15 downto 0)
     );
 end entity InstructionMemory;
 
 architecture Behavioral of InstructionMemory is
     constant DEPTH : integer := 2 ** ADDR_WIDTH;
 
-    type rom_type is array (0 to DEPTH - 1) of std_logic_vector(15 downto 0);
+    type rom_type is array (0 to DEPTH - 1) of unsigned(15 downto 0);
 
     signal ROM : rom_type := (
         others => (others => '0')
@@ -27,7 +27,7 @@ begin
         variable index : integer;
     begin
         if rising_edge(clk) then
-            index := to_integer(unsigned(addr));
+            index := to_integer(addr);
             if index >= 0 and index < DEPTH then
                 instr <= ROM(index);
             else

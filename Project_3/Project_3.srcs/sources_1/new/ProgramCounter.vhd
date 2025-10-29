@@ -9,13 +9,13 @@ entity ProgramCounter is
     port (
         clk     : in  std_logic;
         rst     : in  std_logic;
-        pc_in   : in  std_logic_vector(WIDTH-1 downto 0);
-        pc_out  : out std_logic_vector(WIDTH-1 downto 0)
+        pc_in   : in  unsigned(WIDTH-1 downto 0);
+        pc_out  : out unsigned(WIDTH-1 downto 0)
     );
 end entity ProgramCounter;
 
 architecture Behavioral of ProgramCounter is
-    signal pc_reg : std_logic_vector(WIDTH-1 downto 0);
+    signal pc_reg : unsigned(WIDTH-1 downto 0);
 begin
     process(clk, rst)
     begin
