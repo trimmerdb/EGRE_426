@@ -9,7 +9,7 @@ entity Top_Level is
         RegWr     : in  STD_LOGIC;
         Rd, Rs, Rt : in  unsigned(2 downto 0);
         ALUctr    : in  unsigned(3 downto 0);
-        Zero, Overflow, Carryout : out STD_LOGIC;
+--        Zero, Overflow, Carryout : out STD_LOGIC; -- i don't think we need these
         Result    : out unsigned(15 downto 0)
     );
 end Top_Level;
@@ -18,16 +18,17 @@ architecture Behavioral of Top_Level is
     signal PCIn, PCOut : unsigned(15 downto 0);
     signal adderOut : unsigned(15 downto 0);
     signal instrOut : unsigned(15 downto 0);
-    signal Branch, MemtoReg, memWrite, memRead : std_logic;
-    signal RegDst, ALUSrc, ALUOp, RegWrite : unsigned(15 downto 0);
+    signal Branch, MemtoReg, memWrite, memRead, ALUSrc, RegWrite : std_logic;
+    signal RegDst, ALUOp : unsigned(15 downto 0);
     signal busA, busB, busW : unsigned(15 downto 0); -- Internal buses
     signal signExtendOut : unsigned(15 downto 0);
     signal mux1Out : unsigned(15 downto 0);
     signal shiftOut : unsigned(15 downto 0);
+    signal Zero : std_logic;
     signal j_out : unsigned(15 downto 0);
     signal andOut : std_logic;
     signal dataMemOut : unsigned(15 downto 0);
-    signal mux3Out : unsigned(15 downto 0) := RegWr;
+    signal mux3Out : unsiged(15 downto 0) := RegWr;
 
     component Registers -- Component: Registers
         Port (
@@ -176,8 +177,8 @@ begin
             ALUctr   => ALUctr,
             Result   => busW,
             Zero     => Zero,
-            Overflow => Overflow,
-            Carryout => Carryout
+            Overflow => open,
+            Carryout => open
         );
         
     ALU1: ALU --My Alu
