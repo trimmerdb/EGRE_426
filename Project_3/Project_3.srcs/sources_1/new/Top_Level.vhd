@@ -23,7 +23,6 @@ architecture Behavioral of Top_Level is
     signal Branch, MemtoReg, memWrite, memRead, ALUSrc, RegWrite : std_logic;
     signal RegDst, ALUOp : unsigned(15 downto 0);
     signal readData1, readData2 : unsigned(15 downto 0);
-    signal busA, busB : unsigned(15 downto 0); -- Internal buses
     signal signExtendOut : unsigned(15 downto 0);
     signal mux1Out : unsigned(15 downto 0);
     signal shiftOut : unsigned(15 downto 0);
@@ -33,26 +32,6 @@ architecture Behavioral of Top_Level is
     signal andOut : std_logic;
     signal dataMemOut : unsigned(15 downto 0);
     signal mux3Out : unsigned(15 downto 0);-- := RegWr;
-
-    component Registers -- Component: Registers
-        Port (
-            clk    : in  STD_LOGIC;
-            RegWr  : in  STD_LOGIC;
-            Ra, Rb, Rw : in  unsigned(2 downto 0);
-            busW   : in  unsigned(15 downto 0);
-            busA, busB : out unsigned(15 downto 0)
-        );
-    end component;
-
-    component ALU -- Component: ALU
-        generic ( N : integer := 16 );
-        Port (
-            A, B    : in  unsigned(N-1 downto 0);
-            ALUctr  : in  unsigned(3 downto 0);
-            Result  : out unsigned(N-1 downto 0);
-            Zero, Overflow, Carryout : out STD_LOGIC
-        );
-    end component;
     
     component ProgramCounter -- Component: Program Counter
         generic ( N : integer := 16 );
@@ -81,14 +60,6 @@ architecture Behavioral of Top_Level is
     );
     end component;
     
-    component SignExtend -- Component: Sign Extender
-        generic ( N : integer := 16 );
-            port (
-        In6  : in  unsigned(5 downto 0);
-        Out16 : out unsigned(N-1 downto 0)
-    );
-    end component;
-    
     component MUX2to1 -- Component: MUX
         generic ( N : integer := 16 );
             port (
@@ -99,12 +70,40 @@ architecture Behavioral of Top_Level is
     );
     end component;
     
+    component Registers -- Component: Registers
+        Port (
+            clk    : in  STD_LOGIC;
+            RegWr  : in  STD_LOGIC;
+            Ra, Rb, Rw : in  unsigned(2 downto 0);
+            busW   : in  unsigned(15 downto 0);
+            busA, busB : out unsigned(15 downto 0)
+        );
+    end component;
+    
+    component SignExtend -- Component: Sign Extender
+        generic ( N : integer := 16 );
+            port (
+        In6  : in  unsigned(5 downto 0);
+        Out16 : out unsigned(N-1 downto 0)
+    );
+    end component;
+    
     component ShiftLeft2 -- Component: Left shift by 2
         generic ( N : integer := 16 );
             port (
         data_in  : in  unsigned(N-1 downto 0);
         data_out : out unsigned(N-1 downto 0)
     );
+    end component;
+    
+    component ALU -- Component: ALU
+        generic ( N : integer := 16 );
+        Port (
+            A, B    : in  unsigned(N-1 downto 0);
+            ALUctr  : in  unsigned(3 downto 0);
+            Result  : out unsigned(N-1 downto 0);
+            Zero, Overflow, Carryout : out STD_LOGIC
+        );
     end component;
     
     component DataMemory -- Component: Data Memory
@@ -177,7 +176,7 @@ begin
         generic map ( N => 16 )
         port map (
             A        => readData1,
-            B        => busB,
+            B        => mux1Out,
             ALUctr   => ALUctr,
             Result   => ALU0Out,
             Zero     => Zero,
@@ -205,7 +204,7 @@ begin
             memRead => memRead,
             memWrite => memWrite,
             Address => ALU0Out,
-            WriteData => busB,
+            WriteData => readData2,
             ReadData => dataMemOut
         );
      
