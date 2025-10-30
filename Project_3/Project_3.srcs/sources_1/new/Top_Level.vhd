@@ -20,7 +20,7 @@ architecture Behavioral of Top_Level is
     signal instrOut : unsigned(15 downto 0);
     signal Branch, MemtoReg, memWrite, memRead, ALUSrc, RegWrite : std_logic;
     signal RegDst, ALUOp : unsigned(15 downto 0);
-    signal busA, busB, busW : unsigned(15 downto 0); -- Internal buses
+    signal busA, busB : unsigned(15 downto 0); -- Internal buses
     signal signExtendOut : unsigned(15 downto 0);
     signal mux1Out : unsigned(15 downto 0);
     signal shiftOut : unsigned(15 downto 0);
@@ -28,7 +28,7 @@ architecture Behavioral of Top_Level is
     signal j_out : unsigned(15 downto 0);
     signal andOut : std_logic;
     signal dataMemOut : unsigned(15 downto 0);
-    signal mux3Out : unsiged(15 downto 0) := RegWr;
+    signal mux3Out : unsigned(15 downto 0);-- := RegWr;
 
     component Registers -- Component: Registers
         Port (
@@ -140,11 +140,11 @@ begin
     RF: Registers --My Register File
         port map (
             clk   => clk,
-            RegWr => mux3Out, --<-- from mux
+            RegWr => , --<-- from mux
             Ra    => instrOut(11 downto 9),
             Rb    => instrOut(8 downto 6),
             Rw    => instrOut(5 downto 3),
-            busW  => busW,
+            busW  => mux3Out,
             busA  => busA,
             busB  => busB
         );
