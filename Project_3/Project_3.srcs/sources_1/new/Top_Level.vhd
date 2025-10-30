@@ -15,17 +15,21 @@ entity Top_Level is
 end Top_Level;
 
 architecture Behavioral of Top_Level is
+-- signals and components are arranged from left to right and top to bottom
+-- using the CPU block diagram
     signal PCIn, PCOut : unsigned(15 downto 0);
     signal adderOut : unsigned(15 downto 0);
     signal instrOut : unsigned(15 downto 0);
     signal Branch, MemtoReg, memWrite, memRead, ALUSrc, RegWrite : std_logic;
     signal RegDst, ALUOp : unsigned(15 downto 0);
+    signal readData1, readData2 : unsigned(15 downto 0);
     signal busA, busB : unsigned(15 downto 0); -- Internal buses
     signal signExtendOut : unsigned(15 downto 0);
     signal mux1Out : unsigned(15 downto 0);
     signal shiftOut : unsigned(15 downto 0);
     signal Zero : std_logic;
-    signal j_out : unsigned(15 downto 0);
+    signal ALU0Out : unsigned(15 downto 0);
+    signal ALU1Out : unsigned(15 downto 0);
     signal andOut : std_logic;
     signal dataMemOut : unsigned(15 downto 0);
     signal mux3Out : unsigned(15 downto 0);-- := RegWr;
@@ -140,13 +144,13 @@ begin
     RF: Registers --My Register File
         port map (
             clk   => clk,
-            RegWr => , --<-- from mux
+            RegWr => RegWr,
             Ra    => instrOut(11 downto 9),
             Rb    => instrOut(8 downto 6),
             Rw    => instrOut(5 downto 3),
             busW  => mux3Out,
-            busA  => busA,
-            busB  => busB
+            busA  => readData1,
+            busB  => readData2
         );
     
     SIGN_XTDR : SignExtend
@@ -157,7 +161,7 @@ begin
    
     MUX1 : Mux2to1-- MUX0 RESERVED FOR register input
         port map(
-            A => busB,
+            A => readData2,
             B => signExtendOut,
             Sel => ALUSrc,
             Y => mux1Out
@@ -172,10 +176,10 @@ begin
     ALU0: ALU --My Alu
         generic map ( N => 16 )
         port map (
-            A        => busA,
+            A        => readData1,
             B        => busB,
             ALUctr   => ALUctr,
-            Result   => busW,
+            Result   => ALU0Out,
             Zero     => Zero,
             Overflow => open,
             Carryout => open
@@ -187,7 +191,7 @@ begin
             A        => adderOut,
             B        => shiftOut,
             ALUctr   => "0000",
-            Result   => j_out,
+            Result   => ALU1Out,
             Zero     => open,
             Overflow => open,
             Carryout => open
@@ -200,7 +204,7 @@ begin
             clk => clk,
             memRead => memRead,
             memWrite => memWrite,
-            Address => busW,
+            Address => ALU0Out,
             WriteData => busB,
             ReadData => dataMemOut
         );
@@ -208,7 +212,7 @@ begin
      MUX2 : Mux2to1
         port map(
             A => adderOut,
-            B => j_out,
+            B => ALU1Out,
             Sel => andOut,
             Y => PCIn
         );
@@ -216,11 +220,11 @@ begin
     MUX3 : Mux2to1
         port map(
             A => dataMemOut,
-            B => busW,
+            B => ALU0Out,
             Sel => MemtoReg,
             Y => mux3Out
         );
     
-    Result <= busW; --Final Result
+    Result <= mux3Out; --Final Result
 
 end Behavioral;
