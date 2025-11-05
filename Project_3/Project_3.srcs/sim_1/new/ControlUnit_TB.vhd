@@ -1,21 +1,14 @@
-@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
-@@ -36,8 +36,52 @@ entity ControlUnit_TB is
+entity ControlUnit_TB is
 end ControlUnit_TB;
 
 architecture Behavioral of ControlUnit_TB is
     constant TIME_DELAY : time := 20 ns;
 
-begin
     signal clk_sig : std_logic := '0';
-    
     signal instrSig : unsigned(3 downto 0) := X"0";
     signal regDstSig : std_logic := '0';
     signal ALUSrcSig : std_logic := '0';
