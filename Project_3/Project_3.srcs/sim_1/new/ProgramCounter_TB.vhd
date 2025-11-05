@@ -13,8 +13,8 @@ architecture tb of ProgramCounter_tb is
         port (
             clk     : in  std_logic;
             rst     : in  std_logic;
-            pc_in   : in  unsigned(WIDTH-1 downto 0);
-            pc_out  : out unsigned(WIDTH-1 downto 0)
+            pc_in   : in  unsigned(N-1 downto 0);
+            pc_out  : out unsigned(N-1 downto 0)
         );
     end component;
 
@@ -28,7 +28,7 @@ architecture tb of ProgramCounter_tb is
 begin
     uut: ProgramCounter
         generic map (
-            WIDTH => 16
+            N => 16
         )
         port map (
             clk     => clk,

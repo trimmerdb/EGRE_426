@@ -40,7 +40,7 @@ begin
         end loop;
     end process stimulus;
     
-    dut : work.ControlUnit(Behavioral)
+    dut : entity work.ControlUnit(Behavioral)
         port map(
             instr => instrSig,
             RegDst => regDstSig,

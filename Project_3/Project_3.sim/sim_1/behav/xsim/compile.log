@@ -28,6 +28,30 @@ INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Proj
 INFO: [VRFC 10-3107] analyzing entity 'Top_Level'
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'ControlUnit_TB'
-ERROR: [VRFC 10-2945] 'controlunit' is not a component [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:43]
-ERROR: [VRFC 10-9458] unit 'behavioral' is ignored due to previous errors [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:8]
-INFO: [VRFC 10-8704] VHDL file 'C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd' is ignored due to errors
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ALUControl_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALUControl_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ALU_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/DataMemoryTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DataMemory_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/Full_Adder_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Full_Adder_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/InstructionMemoryTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'InstructionMemory_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/MUX_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MUX2to1_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/PCAdder_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PCAdder_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ProgramCounter_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ProgramCounter_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/SignExtend_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SignExtend_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/left_shift_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ShiftLeft_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/nBitAdder_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'nBitAdder_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/registers_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Registers_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/top_level_sherif_tb.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/top_level_tb.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Top_Level_tb'
