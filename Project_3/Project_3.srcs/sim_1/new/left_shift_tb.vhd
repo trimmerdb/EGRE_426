@@ -2,14 +2,15 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity ShiftLeft2_tb is
-end entity;
+entity ShiftLeft_tb is
+end entity ShiftLeft_tb;
 
-architecture tb of ShiftLeft2_tb is
-    component ShiftLeft2
+architecture tb of ShiftLeft_tb is
+    component ShiftLeft
         generic (
             WIDTH_IN  : integer := 16;
-            WIDTH_OUT : integer := 16
+            WIDTH_OUT : integer := 16;
+            SHIFT_SIZE : integer := 2
         );
         port (
             data_in  : in  unsigned(WIDTH_IN-1 downto 0);
@@ -21,10 +22,11 @@ architecture tb of ShiftLeft2_tb is
     signal data_out : unsigned(15 downto 0);
 
 begin
-    uut: ShiftLeft2
+    dut: ShiftLeft
         generic map (
             WIDTH_IN  => 16,
-            WIDTH_OUT => 16
+            WIDTH_OUT => 16,
+            SHIFT_SIZE => 2
         )
         port map (
             data_in  => data_in,

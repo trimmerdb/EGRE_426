@@ -6,7 +6,7 @@ entity ShiftLeft is
     generic (
         WIDTH_IN  : integer := 16;
         WIDTH_OUT : integer := 16;
-        SHIFT_SIZE : integer := 2
+        SHIFT_SIZE : integer := 1
     );
     port (
         data_in  : in  unsigned(WIDTH_IN-1 downto 0);
