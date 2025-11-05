@@ -5,7 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity SignExtend is
     port (
         In6  : in  unsigned(5 downto 0);
-        Out16 : out unsigned(16 downto 0)
+        Out16 : out unsigned(15 downto 0)
     );
 end entity;
 

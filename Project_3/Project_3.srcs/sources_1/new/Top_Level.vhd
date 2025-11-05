@@ -9,7 +9,6 @@ entity Top_Level is
         RegWr     : in  STD_LOGIC;
         Rd, Rs, Rt : in  unsigned(2 downto 0);
         ALUctr    : in  unsigned(3 downto 0);
---        Zero, Overflow, Carryout : out STD_LOGIC; -- i don't think we need these
         Result    : out unsigned(15 downto 0)
     );
 end Top_Level;
@@ -20,7 +19,7 @@ architecture Behavioral of Top_Level is
     signal PCIn, PCOut : unsigned(15 downto 0);
     signal adderOut : unsigned(15 downto 0);
     signal instrOut : unsigned(15 downto 0);
-    signal mux0Out : unsigned(3 downto 0);
+    signal mux0Out : unsigned(2 downto 0);
     signal shift0Out : unsigned(15 downto 0) := X"0000";
     signal regDst, ALUSrc, memtoReg, regWrite, memRead, memWrite, branch, jump : std_logic;
     signal ALUOp : unsigned(3 downto 0);
@@ -48,19 +47,17 @@ architecture Behavioral of Top_Level is
     end component;
     
     component PCAdder -- Component: Program Adder
-        generic ( N : integer := 16 );
             port (
-                pc_in  : in  unsigned(N-1 downto 0);
-                pc_out : out unsigned(N-1 downto 0)
+                pc_in  : in  unsigned(15 downto 0);
+                pc_out : out unsigned(15 downto 0)
             );
     end component;
     
     component InstructionMemory -- Component: Instruction Memory
-        generic ( N : integer := 16 );
             port (
                 clk   : in  std_logic;
-                addr  : in  unsigned(N-1 downto 0);
-                instr : out unsigned(N-1 downto 0)
+                addr  : in  unsigned(15 downto 0);
+                instr : out unsigned(15 downto 0)
             );
     end component;
     
@@ -100,27 +97,27 @@ architecture Behavioral of Top_Level is
     end component;
     
     component SignExtend -- Component: Sign Extender
-        generic ( N : integer := 16 );
             port (
                 In6  : in  unsigned(5 downto 0);
-                Out16 : out unsigned(N-1 downto 0)
+                Out16 : out unsigned(15 downto 0)
             );
     end component;
     
-    component ALUControlUnit -- Component: Sign Extender
+    component ALUControl -- Component: Sign Extender
             port (
                 ALUOp  : in  unsigned(3 downto 0); ---<<--- might need to be larger?
-                func   : in unsigned(5 downto 0); 
-                ALUControlOut : out unsigned(3 downto 0)
+                func   : in unsigned(2 downto 0); 
+                ALUctr : out unsigned(3 downto 0)
             );
     end component;
     
     component ShiftLeft -- Component: Left shift by 2
-        generic ( N : integer := 16;
-                  S : integer := 2);
+        generic (WIDTH_IN  : integer := 16;
+                 WIDTH_OUT : integer := 16;
+                 SHIFT_SIZE : integer := 2);
             port (
-                data_in  : in  unsigned(N-1 downto 0);
-                data_out : out unsigned(N-1 downto 0)
+                data_in  : in  unsigned(WIDTH_IN-1 downto 0);
+                data_out : out unsigned(WIDTH_OUT-1 downto 0)
             );
     end component;
     
@@ -135,14 +132,13 @@ architecture Behavioral of Top_Level is
     end component;
     
     component DataMemory -- Component: Data Memory
-        generic ( N : integer := 16 );
         port (
             clk      : in  std_logic;
             MemRead  : in  std_logic;
             MemWrite : in  std_logic;
-            Address  : in  unsigned(N-1 downto 0);
-            WriteData: in  unsigned(N-1 downto 0);
-            ReadData : out unsigned(N-1 downto 0)
+            Address  : in  unsigned(15 downto 0);
+            WriteData: in  unsigned(15 downto 0);
+            ReadData : out unsigned(15 downto 0)
         );
     end component;
 
@@ -169,8 +165,9 @@ begin
         );
     
     LSHIFT0 : ShiftLeft
-        generic map(N => 12,
-                    S => 1)
+        generic map(WIDTH_IN => 12,
+                 WIDTH_OUT => 12,
+                 SHIFT_SIZE=> 2)
         port map(
             data_in => instrout(11 downto 0),
             data_out => shift0Out(11 downto 0)
@@ -225,11 +222,11 @@ begin
             Y => mux1Out
         );
     
-    ALUControl : ALUControlUnit
+    ALUControl0 : ALUControl
         port map(
             ALUOp => ALUOp,
-            func => instrOut(5 downto 0),
-            ALUControlOut => ALUControlOut
+            func => instrOut(2 downto 0),
+            ALUctr => ALUControlOut
         );
     
     LSHIFT1 : ShiftLeft

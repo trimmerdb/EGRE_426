@@ -8,7 +8,7 @@ end entity;
 architecture tb of ProgramCounter_tb is
     component ProgramCounter
         generic (
-            WIDTH : integer := 16
+            N : integer := 16
         );
         port (
             clk     : in  std_logic;

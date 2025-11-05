@@ -4,18 +4,18 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity ProgramCounter is
     generic (
-        WIDTH : integer := 16
+        N : integer := 16
     );
     port (
         clk     : in  std_logic;
         rst     : in  std_logic;
-        pc_in   : in  unsigned(WIDTH-1 downto 0);
-        pc_out  : out unsigned(WIDTH-1 downto 0)
+        pc_in   : in  unsigned(N-1 downto 0);
+        pc_out  : out unsigned(N-1 downto 0)
     );
 end entity ProgramCounter;
 
 architecture Behavioral of ProgramCounter is
-    signal pc_reg : unsigned(WIDTH-1 downto 0);
+    signal pc_reg : unsigned(N-1 downto 0);
 begin
     process(clk, rst)
     begin

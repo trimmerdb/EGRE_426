@@ -8,9 +8,6 @@ end entity;
 architecture tb of InstructionMemory_tb is
 
     component InstructionMemory
-        generic (
-            ADDR_WIDTH : integer := 16
-        );
         port (
             clk   : in  std_logic;
             addr  : in  unsigned(15 downto 0);

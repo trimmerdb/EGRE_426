@@ -5,7 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity Registers is
     Port (
         clk    : in  STD_LOGIC;
-        RegWr  : in  unsigned(15 downto 0);
+        RegWr  : in std_logic;
         Ra, Rb, Rw : in  unsigned(2 downto 0);
         busW   : in  unsigned(15 downto 0);
         busA, busB : out unsigned(15 downto 0)

@@ -1,1 +1,17 @@
 Time resolution is 1 ps
+Note: Time=0 ns | Result=0
+Time: 0 ps  Iteration: 3  Process: /Top_Level_tb/monitor_proc  File: C:/Users/Dustin/Documents/426Assembly/TestBench/top_level_tb.vhdl
+Note: Testing ADD operation
+Time: 40 ns  Iteration: 0  Process: /Top_Level_tb/stimulus_proc  File: C:/Users/Dustin/Documents/426Assembly/TestBench/top_level_tb.vhdl
+Note: Testing SUB operation
+Time: 60 ns  Iteration: 0  Process: /Top_Level_tb/stimulus_proc  File: C:/Users/Dustin/Documents/426Assembly/TestBench/top_level_tb.vhdl
+Note: Testing AND operation
+Time: 80 ns  Iteration: 0  Process: /Top_Level_tb/stimulus_proc  File: C:/Users/Dustin/Documents/426Assembly/TestBench/top_level_tb.vhdl
+Note: Testing OR operation
+Time: 100 ns  Iteration: 0  Process: /Top_Level_tb/stimulus_proc  File: C:/Users/Dustin/Documents/426Assembly/TestBench/top_level_tb.vhdl
+Note: Testing SLL operation
+Time: 120 ns  Iteration: 0  Process: /Top_Level_tb/stimulus_proc  File: C:/Users/Dustin/Documents/426Assembly/TestBench/top_level_tb.vhdl
+Note: Testing SRL operation
+Time: 140 ns  Iteration: 0  Process: /Top_Level_tb/stimulus_proc  File: C:/Users/Dustin/Documents/426Assembly/TestBench/top_level_tb.vhdl
+Note: Simulation Complete.
+Time: 260 ns  Iteration: 0  Process: /Top_Level_tb/stimulus_proc  File: C:/Users/Dustin/Documents/426Assembly/TestBench/top_level_tb.vhdl
