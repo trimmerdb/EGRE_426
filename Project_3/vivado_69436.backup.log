@@ -3,10 +3,10 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Wed Nov  5 15:30:16 2025
-# Process ID         : 73548
+# Start of session at: Wed Nov  5 14:35:49 2025
+# Process ID         : 69436
 # Current directory  : C:/Repositories/EGRE_426/Project_3
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent72604 C:\Repositories\EGRE_426\Project_3\Project_3.xpr
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent66524 C:\Repositories\EGRE_426\Project_3\Project_3.xpr
 # Log file           : C:/Repositories/EGRE_426/Project_3/vivado.log
 # Journal file       : C:/Repositories/EGRE_426/Project_3\vivado.jou
 # Running On         : DESKTOP-9FRSU92
@@ -19,7 +19,7 @@
 # Host memory        : 16849 MB
 # Swap memory        : 4179 MB
 # Total Virtual      : 21028 MB
-# Available Virtual  : 5376 MB
+# Available Virtual  : 4907 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Repositories/EGRE_426/Project_3/Project_3.xpr
@@ -49,7 +49,6 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 availab
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu208ld\production\2.0\board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu216ld\production\2.0\board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu670ld\1.0\board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
-INFO: [Project 1-313] Project file moved from 'C:/Users/julio/Documents/EGRE 426 Computer Organization & Design/Lab 4/EGRE_426/Project_3' since last save.
 INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Repositories/EGRE_426/Project_3/Project_3.gen/sources_1'.
 Scanning sources...
 Finished scanning sources
@@ -83,38 +82,13 @@ WARNING: [Project 1-5713] Board part '' set for the project  is not found. Board
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
-open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 1736.020 ; gain = 160.664
-update_compile_order -fileset sim_1
+open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:09 . Memory (MB): peak = 1730.656 ; gain = 138.609
 update_compile_order -fileset sources_1
-set_property top Top_Level [current_fileset]
-update_compile_order -fileset sources_1
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
-ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
-
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd w ]
+add_files -fileset sim_1 C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd
 update_compile_order -fileset sim_1
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ALUControl_TB.vhd w ]
+add_files -fileset sim_1 C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ALUControl_TB.vhd
 update_compile_order -fileset sim_1
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
-ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
-

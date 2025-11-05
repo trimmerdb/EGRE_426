@@ -1,62 +1,63 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity ALUControl_tb is
-end entity;
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+@@ -36,8 +36,52 @@ entity ControlUnit_TB is
+end ControlUnit_TB;
 
-architecture Behavioral of ALUControl_tb is
+architecture Behavioral of ControlUnit_TB is
+    constant TIME_DELAY : time := 20 ns;
 
-    component ALUControl
-        port (
-            ALUOp  : in  unsigned(3 downto 0);
-            func   : in  unsigned(2 downto 0);
-            ALUctr : out unsigned(3 downto 0)
-        );
-    end component;
-
-    signal ALUOp_tb  : unsigned(3 downto 0) := (others => '0');
-    signal func_tb   : unsigned(2 downto 0) := (others => '0');
-    signal ALUctr_tb : unsigned(3 downto 0);
+begin
+    signal clk_sig : std_logic := '0';
+    
+    signal instrSig : unsigned(3 downto 0) := X"0";
+    signal regDstSig : std_logic := '0';
+    signal ALUSrcSig : std_logic := '0';
+    signal memToRegSig : std_logic := '0';
+    signal regWriteSig : std_logic := '0';
+    signal memReadSig : std_logic := '0';
+    signal memWriteSig : std_logic := '0';
+    signal branchSig : std_logic := '0';
+    signal jumpSig : std_logic := '0';
+    signal ALUOpSig : unsigned(3 downto 0) := X"0";
 
 begin
 
-    UUT: ALUControl
-        port map (
-            ALUOp  => ALUOp_tb,
-            func   => func_tb,
-            ALUctr => ALUctr_tb
-        );
-
-    stim_proc: process
+--    clock_proc : process
+--    begin
+--        while true loop
+--            clk_sig <= '0';
+--            wait for TIME_DELAY / 2;
+--            clk_sig <= '1';
+--            wait for TIME_DELAY / 2;
+--        end loop;
+--    end process clock_proc;
+    
+    stimulus : process
     begin
-
-        -- Test R-type ALUOp = 0000
-        ALUOp_tb <= "0000";
-        for i in 0 to 6 loop
-            func_tb <= to_unsigned(i, 3);
+        while(instrSig <= X"F") loop
+            instrSig <= instrSig+1;
             wait for 10 ns;
         end loop;
-
-        -- Test R-type ALUOp = 0001
-        ALUOp_tb <= "0001";
-        for i in 0 to 7 loop
-            func_tb <= to_unsigned(i, 3);
-            wait for 10 ns;
-        end loop;
-
-        -- Test I-type
-        for op in 2 to 7 loop
-            ALUOp_tb <= to_unsigned(op, 4);
-            func_tb <= "000"; 
-            wait for 10 ns;
-        end loop;
-
-        -- Test an invalid case
-        ALUOp_tb <= "1111";
-        func_tb  <= "111";
-        wait for 10 ns;
-        wait;
-    end process;
-
-end architecture Behavioral;
+    end process stimulus;
+    
+    dut : work.ControlUnit(Behavioral)
+        port map(
+            instr => instrSig,
+            RegDst => regDstSig,
+            ALUSrc => ALUSrcSig,
+            MemToReg => memToRegSig,
+            RegWrite => regWriteSig,
+            MemRead => memReadSig,
+            MemWrite => memWriteSig,
+            Branch => branchSig,
+            Jump => jumpSig,
+            ALUOp => ALUOpSig
+        );
+end Behavioral;
