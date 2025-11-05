@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="70" Path="C:/Users/julio/Documents/EGRE 426 Computer Organization &amp; Design/Lab 4/EGRE_426/Project_3/Project_3.xpr">
+<Project Product="Vivado" Version="7" Minor="70" Path="C:/Repositories/EGRE_426/Project_3/Project_3.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="1027bd02270f427886e4020627623268"/>
