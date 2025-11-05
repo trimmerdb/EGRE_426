@@ -3,10 +3,10 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Wed Oct 29 08:36:48 2025
-# Process ID         : 36328
+# Start of session at: Mon Nov  3 15:04:41 2025
+# Process ID         : 25876
 # Current directory  : C:/Repositories/EGRE_426/Project_3
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent65756 C:\Repositories\EGRE_426\Project_3\Project_3.xpr
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent13108 C:\Repositories\EGRE_426\Project_3\Project_3.xpr
 # Log file           : C:/Repositories/EGRE_426/Project_3/vivado.log
 # Journal file       : C:/Repositories/EGRE_426/Project_3\vivado.jou
 # Running On         : DESKTOP-9FRSU92
@@ -17,13 +17,14 @@
 # CPU Physical cores : 10
 # CPU Logical cores  : 16
 # Host memory        : 16849 MB
-# Swap memory        : 3221 MB
-# Total Virtual      : 20070 MB
-# Available Virtual  : 9965 MB
+# Swap memory        : 2952 MB
+# Total Virtual      : 19802 MB
+# Available Virtual  : 9202 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Repositories/EGRE_426/Project_3/Project_3.xpr
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\emb-plus-vpr-4616\1.0\board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+INFO: [Project 1-313] Project file moved from 'C:/Users/julio/Documents/EGRE 426 Computer Organization & Design/Lab 4/EGRE_426/Project_3' since last save.
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\emb-plus-vpr-4616\1.1\board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu105\1.6\board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\kcu105\1.7\board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
@@ -45,11 +46,11 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 availab
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.2 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vhk158\production\1.2\board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk180\production\1.0\board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk180\production\1.1\board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Repositories/EGRE_426/Project_3/Project_3.gen/sources_1'.
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\vpk180\production\1.2\board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu208ld\production\2.0\board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu216ld\production\2.0\board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu670ld\1.0\board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
-INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Repositories/EGRE_426/Project_3/Project_3.gen/sources_1'.
 Scanning sources...
 Finished scanning sources
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\emb-plus-vpr-4616\1.0\board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
@@ -82,28 +83,26 @@ WARNING: [Project 1-5713] Board part '' set for the project  is not found. Board
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
-open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 1709.852 ; gain = 240.488
+open_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:14 . Memory (MB): peak = 1719.879 ; gain = 249.574
 update_compile_order -fileset sources_1
-close [ open C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/InstructionMemory.vhd w ]
-add_files C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/InstructionMemory.vhd
-update_compile_order -fileset sources_1
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ProgramCounter.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\InstructionMemory.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\InstructionMemory.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\InstructionMemory.vhd:]
+close [ open C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALUControlUnit.vhd w ]
+add_files C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALUControlUnit.vhd
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ControlUnit.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ALU.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ControlUnit.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ControlUnit.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ControlUnit.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ALU.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ALU.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ALU.vhd:]
 ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
 
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ProgramCounter.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\InstructionMemory.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\InstructionMemory.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\InstructionMemory.vhd:]
-ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
-
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ProgramCounter.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\InstructionMemory.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\InstructionMemory.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\InstructionMemory.vhd:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ControlUnit.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ALU.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ALU.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ALU.vhd:]
 ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
 
 exit
-INFO: [Common 17-206] Exiting Vivado at Wed Oct 29 08:56:15 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue Nov  4 17:55:36 2025...

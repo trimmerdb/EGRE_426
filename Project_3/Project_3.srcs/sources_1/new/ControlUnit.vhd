@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity ControlUnit is
     port (
-        instr     : in  unsigned(15 downto 0);
+        instr     : in  unsigned(3 downto 0);
         RegDst    : out std_logic;
         ALUSrc    : out std_logic;
         MemToReg  : out std_logic;
@@ -18,13 +18,10 @@ entity ControlUnit is
 end entity ControlUnit;
 
 architecture Behavioral of ControlUnit is
-    signal opcode : unsigned(3 downto 0);
-    signal func   : unsigned(2 downto 0);
-begin
-    opcode <= instr(15 downto 12);
-    func   <= instr(2 downto 0);
 
-    process(opcode, func)
+begin
+
+    process(instr)
     begin
         RegDst   <= '0';
         ALUSrc   <= '0';
@@ -36,106 +33,84 @@ begin
         Jump     <= '0';
         ALUOp    <= "0000";
 
-        case opcode is
+        case instr is
 
-            -- R-TYPE INSTRUCTIONS
+            -- R-type
             when "0000" =>
                 RegDst   <= '1';
-                ALUSrc   <= '0';
                 RegWrite <= '1';
-                case func is
-                    when "000" => ALUOp <= "0000"; -- add
-                    when "001" => ALUOp <= "0001"; -- sub
-                    when "010" => ALUOp <= "0010"; -- mul
-                    when "011" => ALUOp <= "0011"; -- div
-                    when "100" => ALUOp <= "0100"; -- and
-                    when "101" => ALUOp <= "0101"; -- or
-                    when "110" => ALUOp <= "0110"; -- xor
-                    when "111" => ALUOp <= "1111"; -- halt
-                    when others => ALUOp <= "0000";
-                end case;
+                ALUOp    <= "0000";  -- R-type: defer to func bits
             when "0001" =>
                 RegDst   <= '1';
-                ALUSrc   <= '0';
                 RegWrite <= '1';
-                case func is
-                    when "000" => ALUOp <= "0000"; -- sll
-                    when "001" => ALUOp <= "0001"; -- srl
-                    when "010" => ALUOp <= "0010"; -- sla
-                    when "011" => ALUOp <= "0011"; -- sra
-                    when "100" => ALUOp <= "0100"; -- nor
-                    when "101" => ALUOp <= "0101"; -- nand
-                    when "110" => ALUOp <= "0110"; -- xnor
-                    when others => ALUOp <= "0000";
-                end case;
+                ALUOp    <= "0001";  -- R-type: defer to func bits
 
-            -- I-TYPE INSTRUCTIONS
-            when "0010" =>  -- addi
+            -- I-type arithmetic
+            when "0010" =>  -- ADDI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0000";
+                ALUOp    <= "0010";  -- add
 
-            when "0011" =>  -- subi
+            when "0011" =>  -- SUBI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0001";
-
-            when "0100" =>  -- muli
+                ALUOp    <= "0011";  -- sub
+            when "0100" =>  -- MulI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0010";
+                ALUOp    <= "0010";  -- mul
 
-            when "0101" =>  -- divi
+            when "0101" =>  -- DivI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0011";
+                ALUOp    <= "0011";  -- div
 
-            when "0110" =>  -- andi
+            when "0110" =>  -- ANDI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0100";
+                ALUOp    <= "0110";  -- and
 
-            when "0111" =>  -- ori
+            when "0111" =>  -- ORI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0101";
+                ALUOp    <= "0011";  -- or
 
-            when "1000" =>  -- lw
+            when "1000" =>  -- LW
                 ALUSrc   <= '1';
                 MemToReg <= '1';
                 RegWrite <= '1';
                 MemRead  <= '1';
-                ALUOp    <= "0000";  -- use add for address calc maybe?
+                ALUOp    <= "0000";  -- add for address calc
 
-            when "1001" =>  -- sw
+            when "1001" =>  -- SW
                 ALUSrc   <= '1';
                 MemWrite <= '1';
-                ALUOp    <= "0000";  -- use add for address calc maybe?
+                ALUOp    <= "0000";  -- add for address calc
 
-            when "1010" =>  -- beq
+            when "1010" =>  -- BEQ
                 Branch   <= '1';
-                ALUOp    <= "1000";  -- equality compare
-
-            when "1011" =>  -- blt
+                ALUOp    <= "0001";  -- sub for equality check
+                
+            when "1011" =>  -- BEQlt
                 Branch   <= '1';
-                ALUOp    <= "1001";  -- less than
-
-            when "1100" =>  -- bgt
+                ALUOp    <= "0001";  -- sub for equality check
+                
+            when "1100" =>  -- BEQgt
                 Branch   <= '1';
-                ALUOp    <= "1010";  -- greater than
+                ALUOp    <= "0001";  -- sub for equality check
 
-            when "1101" =>  -- jump
-                Jump     <= '1';
-
-            when "1110" =>  -- slli
+            when "1101" =>  -- JUMP
+                Jump <= '1';
+                
+            when "1110" =>  -- Shift Left Logical Immediate
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0111";
+                ALUOp    <= "0100";
 
-            when "1111" =>  -- srli
+            when "1111" =>  -- Shift Right Logical Immediate
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "1000";
+                ALUOp    <= "0101";
 
             when others =>
                 null;

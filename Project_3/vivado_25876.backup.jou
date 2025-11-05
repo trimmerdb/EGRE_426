@@ -3,10 +3,10 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Wed Oct 29 08:36:48 2025
-# Process ID         : 36328
+# Start of session at: Mon Nov  3 15:04:41 2025
+# Process ID         : 25876
 # Current directory  : C:/Repositories/EGRE_426/Project_3
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent65756 C:\Repositories\EGRE_426\Project_3\Project_3.xpr
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent13108 C:\Repositories\EGRE_426\Project_3\Project_3.xpr
 # Log file           : C:/Repositories/EGRE_426/Project_3/vivado.log
 # Journal file       : C:/Repositories/EGRE_426/Project_3\vivado.jou
 # Running On         : DESKTOP-9FRSU92
@@ -17,13 +17,13 @@
 # CPU Physical cores : 10
 # CPU Logical cores  : 16
 # Host memory        : 16849 MB
-# Swap memory        : 3221 MB
-# Total Virtual      : 20070 MB
-# Available Virtual  : 9965 MB
+# Swap memory        : 2952 MB
+# Total Virtual      : 19802 MB
+# Available Virtual  : 9202 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Repositories/EGRE_426/Project_3/Project_3.xpr
 update_compile_order -fileset sources_1
-close [ open C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/InstructionMemory.vhd w ]
-add_files C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/InstructionMemory.vhd
+close [ open C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALUControlUnit.vhd w ]
+add_files C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALUControlUnit.vhd
 update_compile_order -fileset sources_1

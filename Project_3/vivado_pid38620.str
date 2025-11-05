@@ -1,0 +1,714 @@
+/*
+
+AMD Vivado v2025.1 (64-bit) [Major: 2025, Minor: 1]
+SW Build: 6140274 on Thu May 22 00:12:29 MDT 2025
+IP Build: 6138677 on Thu May 22 03:10:11 MDT 2025
+IP Build: 6138677 on Thu May 22 03:10:11 MDT 2025
+
+Process ID (PID): 38620
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Wed Nov 05 10:14:05 EST 2025
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Windows 11
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 16
+
+Screen size: 2560x1600
+Local screen bounds: x = 0, y = 0, width = 2560, height = 1528
+Screen resolution (DPI): 150
+Available screens: 1
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=18
+Scale size: 27
+OS font scaling: 150%
+Anti-Alias Enabled: false
+
+Java version: 	21.0.1 64-bit
+
+Java home: 	C:/Xilinx/2025.1/Vivado/tps/win64/jre21.0.1_12
+Java executable: 	C:/Xilinx/2025.1/Vivado/tps/win64/jre21.0.1_12/bin/java.exe
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.d3d=false, -Dsun.awt.nopixfmt=true, -Dsun.java2d.dpiaware=true, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:ParallelGCThreads=4, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms812m, -Xmx6144m, -Xss10m]
+Java initial memory (-Xms): 	812 MB
+Java maximum memory (-Xmx):	 6 GB
+
+User name: 	Dustin
+User home directory: C:/Users/Dustin
+User working directory: C:/Repositories/EGRE_426/Project_3
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/2025.1
+HDI_APPROOT: C:/Xilinx/2025.1/Vivado
+RDI_DATADIR: C:/Xilinx/2025.1/SharedData/data;C:/Xilinx/2025.1/Vivado/data
+RDI_BINDIR: C:/Xilinx/2025.1/Vivado/bin
+
+Vivado preferences file: C:/Users/Dustin/AppData/Roaming/Xilinx/Vivado/2025.1/vivado.xml
+Vivado preferences directory: C:/Users/Dustin/AppData/Roaming/Xilinx/Vivado/2025.1/
+Vivado layouts directory: C:/Users/Dustin/AppData/Roaming/Xilinx/Vivado/2025.1/data/layouts
+PlanAhead jar file: 	C:/Xilinx/2025.1/Vivado/lib/classes/planAhead.jar
+Vivado log file: 	C:/Repositories/EGRE_426/Project_3/vivado.log
+Vivado journal file: 	C:/Repositories/EGRE_426/Project_3/vivado.jou
+Engine tmp dir: 	C:/Repositories/EGRE_426/Project_3/.Xil/Vivado-38620-DESKTOP-9FRSU92
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+RDI_APPROOT: C:/Xilinx/2025.1/Vivado
+RDI_ARGS:  -gui_launcher_event rodinguilauncherevent62856 "C:\Repositories\EGRE_426\Project_3\Project_3.xpr"
+RDI_ARGS_FUNCTION: RDI_EXEC_DEFAULT
+RDI_BASEROOT: C:/Xilinx/2025.1
+RDI_BINDIR: C:/Xilinx/2025.1/Vivado/bin
+RDI_BINROOT: C:/Xilinx/2025.1/Vivado/bin
+RDI_BUILD: yes
+RDI_CHECK_PROG: True
+RDI_DATADIR: C:/Xilinx/2025.1/SharedData/data;C:/Xilinx/2025.1/Vivado/data
+RDI_INSTALLROOT: C:/Xilinx
+RDI_INSTALLVER: Vivado
+RDI_INSTALLVERSION: 2025.1
+RDI_ISE_PLATFORM: nt64
+RDI_JAVACEFROOT: C:/Xilinx/2025.1/Vivado/tps/win64/java-cef-95.0.4638.69
+RDI_JAVAFXROOT: C:/Xilinx/2025.1/Vivado/tps/win64/javafx-sdk-21.0.1
+RDI_JAVAROOT: C:/Xilinx/2025.1/Vivado/tps/win64/jre21.0.1_12
+RDI_JAVA_VERSION: 21.0.1_12
+RDI_LIBDIR: C:/Xilinx/2025.1/Vivado/lib/win64.o
+RDI_MINGW_LIB: C:/Xilinx/2025.1/Vivado\tps\mingw\6.2.0\win64.o\nt\bin;C:/Xilinx/2025.1/Vivado\tps\mingw\6.2.0\win64.o\nt\libexec\gcc\x86_64-w64-mingw32\6.2.0
+RDI_OPT_EXT: .o
+RDI_PLATFORM: win64
+RDI_PREPEND_PATH: C:/Xilinx/2025.1/Vitis/bin;C:/Xilinx/2025.1/Vivado/ids_lite/ISE/bin/nt64;C:/Xilinx/2025.1/Vivado/ids_lite/ISE/lib/nt64
+RDI_PROG: C:/Xilinx/2025.1/Vivado/bin/unwrapped/win64.o/vivado.exe
+RDI_PROGNAME: vivado.exe
+RDI_PYTHON3: C:/Xilinx/2025.1/Vivado\tps\win64\python-3.13.0
+RDI_PYTHON3_VERSION: 3.13.0
+RDI_PYTHONHOME: C:/Xilinx/2025.1/Vivado\tps\win64\python-3.13.0
+RDI_PYTHONPATH: C:/Xilinx/2025.1/Vivado\tps\win64\python-3.13.0;C:/Xilinx/2025.1/Vivado\tps\win64\python-3.13.0\bin;C:/Xilinx/2025.1/Vivado\tps\win64\python-3.13.0\lib;C:/Xilinx/2025.1/Vivado\tps\win64\python-3.13.0\lib\site-packages
+RDI_PYTHON_LD_LIBPATH: C:/Xilinx/2025.1/Vivado\tps\win64\python-3.13.0\lib
+RDI_SESSION_INFO: C:\Repositories\EGRE_426\Project_3:DESKTOP-9FRSU92-Wed11-05-2025_10-12-36.65
+RDI_SHARED_DATA: C:/Xilinx/2025.1/SharedData/data
+RDI_TPS_ROOT: C:/Xilinx/2025.1/Vivado/tps/win64
+RDI_USE_JDK21: True
+RDI_VERBOSE: False
+XILINX: C:/Xilinx/2025.1/Vivado/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/2025.1/Vivado/ids_lite/ISE
+XILINX_HLS: C:/Xilinx/2025.1/Vitis
+XILINX_PLANAHEAD: C:/Xilinx/2025.1/Vivado
+XILINX_SDK: C:/Xilinx/2025.1/Vitis
+XILINX_VITIS: C:/Xilinx/2025.1/Vitis
+XILINX_VIVADO: C:/Xilinx/2025.1/Vivado
+_RDI_BINROOT: C:\Xilinx\2025.1\Vivado\bin
+_RDI_CWD: C:\Repositories\EGRE_426\Project_3
+
+
+GUI allocated memory:	812 MB
+GUI max memory:		6,144 MB
+Engine allocated memory: 927 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 120 MB (+123041kb) [00:00:21]
+// [Engine Memory]: 822 MB (+710154kb) [00:00:21]
+// Opening Vivado Project: C:\Repositories\EGRE_426\Project_3\Project_3.xpr. Version: Vivado v2025.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project C:/Repositories/EGRE_426/Project_3/Project_3.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 965 MB. GUI used memory: 81 MB. Current time: 11/5/25, 10:14:06 AM EST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 135 MB (+10253kb) [00:00:30]
+// [Engine Memory]: 1,066 MB (+212945kb) [00:00:30]
+// WARNING: HEventQueue.dispatchEvent() is taking  2071 ms.
+// Tcl Message: open_project C:/Repositories/EGRE_426/Project_3/Project_3.xpr 
+// Tcl Message: INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Repositories/EGRE_426/Project_3/Project_3.gen/sources_1'. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'. 
+// Project name: Project_3; location: C:/Repositories/EGRE_426/Project_3; part: xc7a100tcsg324-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 1709.773 ; gain = 240.594 
+dismissDialog("Open Project"); // bk (Open Project Progress)
+// [GUI Memory]: 165 MB (+23882kb) [00:00:33]
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// [Engine Memory]: 1,121 MB (+1462kb) [00:00:39]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ALUControlUnit(Behavioral) (ALUControlUnit.vhd)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ALUControlUnit(Behavioral) (ALUControlUnit.vhd)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ALUControlUnit(Behavioral) (ALUControlUnit.vhd)]", 2, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ControlUnit(Behavioral) (ControlUnit.vhd)]", 3, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ControlUnit(Behavioral) (ControlUnit.vhd)]", 3, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ControlUnit(Behavioral) (ControlUnit.vhd)]", 3, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+// Elapsed time: 18 seconds
+selectCodeEditor("ControlUnit.vhd", 673, 529); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 673, 529, false, false, false, false, true); // ae (ControlUnit.vhd) - Double Click
+selectCodeEditor("ControlUnit.vhd", 673, 529); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'c'); // ae (ControlUnit.vhd)
+// Elapsed time: 73 seconds
+selectCodeEditor("ControlUnit.vhd", 493, 449); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'c'); // ae (ControlUnit.vhd)
+// Elapsed time: 127 seconds
+selectCodeEditor("ControlUnit.vhd", 621, 371); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'v'); // ae (ControlUnit.vhd)
+// Elapsed time: 24 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControlUnit.vhd", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("ALUControlUnit.vhd", 484, 284); // ae (ALUControlUnit.vhd)
+typeControlKey((HResource) null, "ALUControlUnit.vhd", 'v'); // ae (ALUControlUnit.vhd)
+// Elapsed time: 53 seconds
+selectCodeEditor("ALUControlUnit.vhd", 738, 246); // ae (ALUControlUnit.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 05m:25s
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ControlUnit.vhd", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("ControlUnit.vhd", 544, 408); // ae (ControlUnit.vhd)
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 05m:27s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 05m:29s
+// Elapsed time: 23 seconds
+selectCodeEditor("ControlUnit.vhd", 385, 162); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 739, 360); // ae (ControlUnit.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 05m:55s
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("ControlUnit.vhd", 405, 561); // ae (ControlUnit.vhd)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 05m:57s
+selectCodeEditor("ControlUnit.vhd", 363, 565); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 377, 560); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 410, 560); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 487, 510); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 178, 561); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 178, 561, false, false, false, false, true); // ae (ControlUnit.vhd) - Double Click
+selectCodeEditor("ControlUnit.vhd", 473, 582); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 193, 444); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 193, 444, false, false, false, false, true); // ae (ControlUnit.vhd) - Double Click
+selectCodeEditor("ControlUnit.vhd", 157, 439); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 752, 383); // ae (ControlUnit.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 06m:37s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 06m:39s
+// Elapsed time: 49 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Level(Behavioral) (Top_Level.vhd)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// Elapsed time: 22 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Level(Behavioral) (Top_Level.vhd), ALU0 : ALU(Behavioral) (ALU.vhd)]", 9, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Level(Behavioral) (Top_Level.vhd), ALU0 : ALU(Behavioral) (ALU.vhd), Adder_Unit : nBitAdder(Behavioral) (nBitAdder.vhd)]", 10, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+selectCodeEditor("ALU.vhd", 894, 242); // ae (ALU.vhd)
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 894, 242); // ae (ALU.vhd)
+// Elapsed time: 39 seconds
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // ae (ALU.vhd)
+// Elapsed time: 48 seconds
+selectCodeEditor("ALU.vhd", 680, 161); // ae (ALU.vhd)
+// Elapsed time: 30 seconds
+selectCodeEditor("ALU.vhd", 680, 161); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 777, 243); // ae (ALU.vhd)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,143 MB. GUI used memory: 88 MB. Current time: 11/5/25, 10:24:16 AM EST
+// Elapsed time: 68 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ControlUnit.vhd", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("ControlUnit.vhd", 390, 363); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'v'); // ae (ControlUnit.vhd)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControlUnit.vhd", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("ALUControlUnit.vhd", 778, 412); // ae (ALUControlUnit.vhd)
+typeControlKey((HResource) null, "ALUControlUnit.vhd", 'v'); // ae (ALUControlUnit.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 11m:19s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 11m:21s
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ControlUnit.vhd", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 15 seconds
+selectCodeEditor("ControlUnit.vhd", 510, 114); // ae (ControlUnit.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 11m:47s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 11m:49s
+selectCodeEditor("ControlUnit.vhd", 381, 160); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 486, 512); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 398, 574); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 352, 581); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 178, 545); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 178, 561); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 178, 561, false, false, false, false, true); // ae (ControlUnit.vhd) - Double Click
+typeControlKey((HResource) null, "ControlUnit.vhd", 'c'); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 457, 561); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 181, 595); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 181, 595, false, false, false, false, true); // ae (ControlUnit.vhd) - Double Click
+typeControlKey((HResource) null, "ControlUnit.vhd", 'v'); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 173, 390); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 173, 390, false, false, false, false, true); // ae (ControlUnit.vhd) - Double Click
+typeControlKey((HResource) null, "ControlUnit.vhd", 'v'); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 558, 410); // ae (ControlUnit.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 12m:15s
+// Tcl Message: ERROR: [Common 17-180] Spawn failed: The operation completed successfully.  
+selectCodeEditor("ControlUnit.vhd", 318, 190); // ae (ControlUnit.vhd)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 12m:17s
+selectCodeEditor("ControlUnit.vhd", 584, 191, false, false, false, true, false); // ae (ControlUnit.vhd) - Popup Trigger
+selectCodeEditor("ControlUnit.vhd", 562, 164); // ae (ControlUnit.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 15 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControlUnit.vhd", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 12m:35s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 12m:37s
+// Elapsed time: 155 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// [GUI Memory]: 221 MB (+49622kb) [00:15:40]
+// [Engine Memory]: 1,183 MB (+6781kb) [00:15:40]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,184 MB. GUI used memory: 89 MB. Current time: 11/5/25, 10:29:21 AM EST
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControlUnit.vhd", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("ALUControlUnit.vhd", 633, 260); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 716, 232); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 701, 210); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 631, 187); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 642, 160); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 702, 138); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 723, 118); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 667, 391); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 691, 415); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 676, 434); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 671, 461); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 667, 485); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 658, 508); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 661, 544); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 660, 559); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 640, 575); // ae (ALUControlUnit.vhd)
+// Elapsed time: 111 seconds
+selectCodeEditor("ALUControlUnit.vhd", 634, 265); // ae (ALUControlUnit.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 17m:37s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 17m:39s
+// Elapsed time: 209 seconds
+closeMainWindow("Project_3 - [C:/Repositories/EGRE_426/Project_3/Project_3.xpr] - Vivado 2025.1"); // G (MainFrame)
+// Run Command: PAResourceCommand.PACommandNames_EXIT
+// 'aC' command handler elapsed time: 11 seconds
+// Elapsed time: 11 seconds
+dismissDialog("Exit Vivado"); // x (dialog0)
+// Elapsed time: 263 seconds
+selectCodeEditor("ALUControlUnit.vhd", 245, 415); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 512, 332); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 45, 186); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 381, 474); // ae (ALUControlUnit.vhd)
+typeControlKey((HResource) null, "ALUControlUnit.vhd", 'v'); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 311, 469); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 304, 500); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 306, 491); // ae (ALUControlUnit.vhd)
+// Elapsed time: 11 seconds
+selectCodeEditor("ALUControlUnit.vhd", 359, 462); // ae (ALUControlUnit.vhd)
+typeControlKey((HResource) null, "ALUControlUnit.vhd", 'c'); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 446, 469); // ae (ALUControlUnit.vhd)
+typeControlKey((HResource) null, "ALUControlUnit.vhd", 'v'); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 239, 440); // ae (ALUControlUnit.vhd)
+// Elapsed time: 23 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 63 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControlUnit.vhd", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 81 seconds
+selectCodeEditor("ALUControlUnit.vhd", 612, 259); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 617, 232); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 618, 266); // ae (ALUControlUnit.vhd)
+// Elapsed time: 12 seconds
+selectCodeEditor("ALUControlUnit.vhd", 539, 291); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 594, 286); // ae (ALUControlUnit.vhd)
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 11 seconds
+selectCodeEditor("ALU.vhd", 735, 651); // ae (ALU.vhd)
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // ae (ALU.vhd)
+// Elapsed time: 166 seconds
+selectCodeEditor("ALU.vhd", 623, 644); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 879, 708); // ae (ALU.vhd)
+typeControlKey(null, null, 'z');
+selectCodeEditor("ALU.vhd", 879, 708); // ae (ALU.vhd)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 272, 609); // ae (ALU.vhd)
+// Elapsed time: 153 seconds
+selectCodeEditor("ALU.vhd", 666, 531); // ae (ALU.vhd)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 85, 589); // ae (ALU.vhd)
+// Elapsed time: 12 seconds
+selectCodeEditor("ALU.vhd", 782, 741); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 686, 201); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 685, 190); // ae (ALU.vhd)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 178, 211); // ae (ALU.vhd)
+// Elapsed time: 11 seconds
+selectCodeEditor("ALU.vhd", 293, 610); // ae (ALU.vhd)
+// Elapsed time: 282 seconds
+selectCodeEditor("ALU.vhd", 641, 242); // ae (ALU.vhd)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 42, 316); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 36, 208); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 50, 228); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 926, 292); // ae (ALU.vhd)
+// Elapsed time: 22 seconds
+selectCodeEditor("ALU.vhd", 372, 636); // ae (ALU.vhd)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 189, 805); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 293, 808); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 293, 808); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 832, 183); // ae (ALU.vhd)
+// Elapsed time: 13 seconds
+selectCodeEditor("ALU.vhd", 957, 625); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 961, 617); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 481, 643); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 476, 669); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 739, 711); // ae (ALU.vhd)
+// Elapsed time: 87 seconds
+selectCodeEditor("ALU.vhd", 753, 670); // ae (ALU.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 43m:52s
+// TclEventType: DG_GRAPH_GENERATED
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControlUnit.vhd", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("ALUControlUnit.vhd", 447, 556); // ae (ALUControlUnit.vhd)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 43m:54s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 43m:57s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 43m:58s
+// Elapsed time: 14 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControlUnit.vhd", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("ALUControlUnit.vhd", 534, 285); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 527, 311); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 612, 297); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 612, 307); // ae (ALUControlUnit.vhd)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,189 MB. GUI used memory: 90 MB. Current time: 11/5/25, 10:59:23 AM EST
+// Elapsed time: 45 seconds
+selectCodeEditor("ALUControlUnit.vhd", 683, 350); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 692, 329); // ae (ALUControlUnit.vhd)
+// Elapsed time: 54 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 35 seconds
+selectCodeEditor("ALU.vhd", 406, 288); // ae (ALU.vhd)
+typeControlKey(null, null, 'z');
+selectCodeEditor("ALU.vhd", 422, 366); // ae (ALU.vhd)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // ae (ALU.vhd)
+typeControlKey(null, null, 'z');
+selectCodeEditor("ALU.vhd", 447, 368); // ae (ALU.vhd)
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 284, 568); // ae (ALU.vhd)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 271, 656); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 341, 665); // ae (ALU.vhd)
+// Elapsed time: 14 seconds
+selectCodeEditor("ALU.vhd", 242, 666); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 353, 687); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 808, 674); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 375, 690); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 394, 688); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 703, 668); // ae (ALU.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 47m:52s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 47m:55s
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControlUnit.vhd", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("ALUControlUnit.vhd", 807, 517); // ae (ALUControlUnit.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("ALUControlUnit.vhd", 691, 332); // ae (ALUControlUnit.vhd)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 48m:05s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 48m:07s
+// Elapsed time: 15 seconds
+selectCodeEditor("ALUControlUnit.vhd", 536, 329); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 661, 342); // ae (ALUControlUnit.vhd)
+// Elapsed time: 27 seconds
+selectCodeEditor("ALUControlUnit.vhd", 677, 309); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 594, 355); // ae (ALUControlUnit.vhd)
+// Elapsed time: 30 seconds
+selectCodeEditor("ALUControlUnit.vhd", 540, 370); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 788, 419); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 629, 385); // ae (ALUControlUnit.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 50m:03s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 50m:05s
+// Elapsed time: 43 seconds
+selectCodeEditor("ALUControlUnit.vhd", 620, 413); // ae (ALUControlUnit.vhd)
+// Elapsed time: 30 seconds
+selectCodeEditor("ALUControlUnit.vhd", 594, 463); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 707, 466); // ae (ALUControlUnit.vhd)
+// Elapsed time: 55 seconds
+selectCodeEditor("ALUControlUnit.vhd", 793, 538); // ae (ALUControlUnit.vhd)
+// Elapsed time: 128 seconds
+selectCodeEditor("ALUControlUnit.vhd", 982, 531); // ae (ALUControlUnit.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 54m:09s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 54m:11s
+selectCodeEditor("ALUControlUnit.vhd", 539, 536); // ae (ALUControlUnit.vhd)
+// Elapsed time: 23 seconds
+selectCodeEditor("ALUControlUnit.vhd", 536, 572); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 533, 589); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 542, 595); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 539, 614); // ae (ALUControlUnit.vhd)
+// Elapsed time: 22 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("ALU.vhd", 411, 569); // ae (ALU.vhd)
+typeControlKey((HResource) null, "ALU.vhd", 'c'); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 409, 566); // ae (ALU.vhd)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 257, 587); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 393, 631); // ae (ALU.vhd)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 394, 641); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 259, 667); // ae (ALU.vhd)
+// Elapsed time: 28 seconds
+selectCodeEditor("ALU.vhd", 377, 592); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 387, 670); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 445, 699); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 445, 699, false, false, false, false, true); // ae (ALU.vhd) - Double Click
+selectCodeEditor("ALU.vhd", 446, 720); // ae (ALU.vhd)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 267, 748); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 428, 735); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 428, 735); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 439, 790); // ae (ALU.vhd)
+typeControlKey((HResource) null, "ALU.vhd", 'v'); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 309, 820); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 271, 817); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 379, 816); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 448, 649); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 240, 514); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 244, 589); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 243, 660); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 243, 744); // ae (ALU.vhd)
+selectCodeEditor("ALU.vhd", 591, 723); // ae (ALU.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControlUnit.vhd", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 57m:37s
+selectCodeEditor("ALUControlUnit.vhd", 1067, 563); // ae (ALUControlUnit.vhd)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 57m:39s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 57m:41s
+// Tcl Message: ERROR: [Common 17-180] Spawn failed: The operation completed successfully.  
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("ALUControlUnit.vhd", 538, 556); // ae (ALUControlUnit.vhd)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 57m:43s
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControlUnit.vhd", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 58m:05s
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("ALUControlUnit.vhd", 542, 589); // ae (ALUControlUnit.vhd)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 58m:07s
+selectCodeEditor("ALUControlUnit.vhd", 541, 618); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 538, 639); // ae (ALUControlUnit.vhd)
+// Elapsed time: 72 seconds
+selectCodeEditor("ALUControlUnit.vhd", 459, 563); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 566, 562); // ae (ALUControlUnit.vhd)
+// Elapsed time: 20 seconds
+selectCodeEditor("ALUControlUnit.vhd", 590, 602); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 589, 587); // ae (ALUControlUnit.vhd)
+// Elapsed time: 11 seconds
+selectCodeEditor("ALUControlUnit.vhd", 464, 588); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 683, 604); // ae (ALUControlUnit.vhd)
+// Elapsed time: 24 seconds
+selectCodeEditor("ALUControlUnit.vhd", 695, 567); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 692, 582); // ae (ALUControlUnit.vhd)
+// Elapsed time: 13 seconds
+selectCodeEditor("ALUControlUnit.vhd", 720, 649); // ae (ALUControlUnit.vhd)
+// Elapsed time: 20 seconds
+selectCodeEditor("ALUControlUnit.vhd", 242, 638); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 452, 637); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 451, 658); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 226, 664); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 241, 692); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 240, 718); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 243, 735); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 244, 763); // ae (ALUControlUnit.vhd)
+// Elapsed time: 12 seconds
+selectCodeEditor("ALUControlUnit.vhd", 457, 694); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 463, 720); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 530, 736); // ae (ALUControlUnit.vhd)
+// Elapsed time: 11 seconds
+selectCodeEditor("ALUControlUnit.vhd", 560, 587); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 567, 567); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 571, 609); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 571, 622); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 571, 636); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 583, 663); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 575, 688); // ae (ALUControlUnit.vhd)
+// Elapsed time: 17 seconds
+selectCodeEditor("ALUControlUnit.vhd", 587, 664); // ae (ALUControlUnit.vhd)
+// Elapsed time: 27 seconds
+selectCodeEditor("ALUControlUnit.vhd", 460, 660); // ae (ALUControlUnit.vhd)
+// Elapsed time: 11 seconds
+selectCodeEditor("ALUControlUnit.vhd", 462, 691); // ae (ALUControlUnit.vhd)
+// Elapsed time: 92 seconds
+selectCodeEditor("ALUControlUnit.vhd", 999, 682); // ae (ALUControlUnit.vhd)
+selectCodeEditor("ALUControlUnit.vhd", 516, 725); // ae (ALUControlUnit.vhd)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,189 MB. GUI used memory: 92 MB. Current time: 11/5/25, 11:29:24 AM EST
+// Elapsed time: 643 seconds
+selectCodeEditor("ALUControlUnit.vhd", 849, 832); // ae (ALUControlUnit.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 01h:15m:43s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 01h:15m:45s
+// Elapsed time: 98 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Top_Level(Behavioral) (Top_Level.vhd), ALU0 : ALU(Behavioral) (ALU.vhd)]", 9); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ControlUnit(Behavioral) (ControlUnit.vhd)]", 15, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ControlUnit(Behavioral) (ControlUnit.vhd)]", 15, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+// Elapsed time: 17 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControlUnit.vhd", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("ALUControlUnit.vhd", 960, 474); // ae (ALUControlUnit.vhd)
+typeControlKey((HResource) null, "ALUControlUnit.vhd", 'c'); // ae (ALUControlUnit.vhd)
+// Elapsed time: 63 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ControlUnit.vhd", 3); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("ControlUnit.vhd", 777, 322); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'c'); // ae (ControlUnit.vhd)
+// Elapsed time: 36 seconds
+selectCodeEditor("ControlUnit.vhd", 713, 732); // ae (ControlUnit.vhd)
+// Elapsed time: 87 seconds
+selectCodeEditor("ControlUnit.vhd", 782, 357); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'c'); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 872, 390); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 868, 357); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'v'); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 266, 390); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 360, 361); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 362, 465); // ae (ControlUnit.vhd)
+// Elapsed time: 35 seconds
+selectCodeEditor("ControlUnit.vhd", 239, 236); // ae (ControlUnit.vhd)
+// Elapsed time: 10 seconds
+selectCodeEditor("ControlUnit.vhd", 363, 581); // ae (ControlUnit.vhd)
+// Elapsed time: 22 seconds
+selectCodeEditor("ControlUnit.vhd", 358, 463); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 360, 590); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 362, 639); // ae (ControlUnit.vhd)
+// Elapsed time: 32 seconds
+selectCodeEditor("ControlUnit.vhd", 540, 588); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 536, 605); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 534, 600); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 534, 592); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'c'); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 577, 602); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 577, 583); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'v'); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 261, 615); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 244, 610); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 376, 605); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 376, 742); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 487, 687); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 507, 805); // ae (ControlUnit.vhd)
+// Elapsed time: 16 seconds
+selectCodeEditor("ControlUnit.vhd", 235, 613); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 238, 736); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 353, 667); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 374, 665); // ae (ControlUnit.vhd)
+// Elapsed time: 24 seconds
+selectCodeEditor("ControlUnit.vhd", 231, 566); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 241, 692); // ae (ControlUnit.vhd)
+// Elapsed time: 81 seconds
+selectCodeEditor("ControlUnit.vhd", 469, 565); // ae (ControlUnit.vhd)
+// Elapsed time: 18 seconds
+selectCodeEditor("ControlUnit.vhd", 707, 713); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'c'); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 766, 728); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'v'); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'v'); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 305, 808); // ae (ControlUnit.vhd)
+// Elapsed time: 42 seconds
+selectCodeEditor("ControlUnit.vhd", 719, 714); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 724, 822); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 725, 762); // ae (ControlUnit.vhd)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("ControlUnit.vhd", 413, 410); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 475, 598); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 489, 614); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 468, 642); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'v'); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 261, 656); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 367, 633); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 212, 672); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 205, 536); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 240, 455); // ae (ControlUnit.vhd)
+// Elapsed time: 33 seconds
+selectCodeEditor("ControlUnit.vhd", 691, 575); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'c'); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 785, 554); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'v'); // ae (ControlUnit.vhd)
+typeControlKey((HResource) null, "ControlUnit.vhd", 'v'); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 262, 581); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 695, 555); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 711, 662); // ae (ControlUnit.vhd)
+// Elapsed time: 10 seconds
+selectCodeEditor("ControlUnit.vhd", 411, 573); // ae (ControlUnit.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ERROR: [Common 17-180] Spawn failed: The operation completed successfully.  
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 01h:29m:08s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 01h:29m:10s
+// Elapsed time: 15 seconds
+selectCodeEditor("ControlUnit.vhd", 394, 390); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 428, 492); // ae (ControlUnit.vhd)
+// Elapsed time: 57 seconds
+selectCodeEditor("ControlUnit.vhd", 240, 310); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 241, 414); // ae (ControlUnit.vhd)
+selectCodeEditor("ControlUnit.vhd", 1098, 626); // ae (ControlUnit.vhd)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 01h:30m:34s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 01h:30m:36s
+// Elapsed time: 73 seconds
+selectCodeEditor("ControlUnit.vhd", 945, 652); // ae (ControlUnit.vhd)
+// Elapsed time: 32 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControlUnit.vhd", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 59 seconds
+selectCodeEditor("ALUControlUnit.vhd", 627, 291); // ae (ALUControlUnit.vhd)

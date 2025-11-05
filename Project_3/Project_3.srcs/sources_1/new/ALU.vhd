@@ -60,6 +60,11 @@ begin
     -- Main ALU Logic
     process(ALUctr, A, B, add_sum, add_cout)
         variable temp_product : unsigned((2*N)-1 downto 0);
+        variable dividend   : unsigned(N-1 downto 0);
+        variable divisor    : unsigned(N-1 downto 0);
+        variable quotient   : unsigned(N-1 downto 0);
+        variable remainder  : unsigned(N downto 0);
+        variable temp       : unsigned(N downto 0);
         variable i : integer;
     begin
         alu_result <= (others => '0');
@@ -114,7 +119,53 @@ begin
 
                 alu_result <= temp_product(N-1 downto 0);
                 Carryout   <= temp_product(N);  -- upper bit carry indicator
-
+                
+             when "1001" =>  -- DIVISION
+                if B = 0 then
+                    alu_result <= (others => '0');  -- divide by zero
+                    Overflow   <= '1';
+                    Carryout   <= '0';
+                else
+                    dividend  := A;
+                    divisor   := B;
+                    remainder := (others => '0');
+                    quotient  := (others => '0');
+            
+                    for i in N-1 downto 0 loop
+                        -- Shift left remainder and bring down next dividend bit
+                        remainder := shift_left(remainder, 1);
+                        remainder(0) := dividend(i);
+            
+                        -- Try subtraction
+                        temp := remainder - ("0" & divisor);  -- extend divisor by 1 bit
+            
+                        if temp(N) = '0' then  -- no borrow => remainder >= divisor
+                            remainder := temp;
+                            quotient(i) := '1';
+                        else
+                            null;
+                        end if;
+                    end loop;
+            
+                    alu_result <= quotient;  -- output quotient
+                    Carryout   <= '0';
+                    Overflow   <= '0';
+                end if;
+            when "1010" =>  -- XOR
+                alu_result <= A xor B;
+                Carryout   <= '0';
+            when "1011" =>  -- NOR
+                alu_result <= A xor B;
+                Carryout   <= '0';
+            when "1100" =>  -- NAND
+                alu_result <= A xor B;
+                Carryout   <= '0';
+            when "1101" =>  -- XNOR
+                alu_result <= A xor B;
+                Carryout   <= '0';
+            when "1110" =>  -- HAULT
+                alu_result <= A xor B;
+                Carryout   <= '0';
             when others =>
                 alu_result <= (others => '0');
                 Carryout   <= '0';
