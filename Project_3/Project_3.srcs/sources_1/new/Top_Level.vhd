@@ -21,7 +21,7 @@ architecture Behavioral of Top_Level is
     signal adderOut : unsigned(15 downto 0);
     signal instrOut : unsigned(15 downto 0);
     signal mux0Out : unsigned(3 downto 0);
-    singal shift1Out : unsiged(15 downto 0) := X"0000";
+    signal shift0Out : unsigned(15 downto 0) := X"0000";
     signal regDst, ALUSrc, memtoReg, regWrite, memRead, memWrite, branch, jump : std_logic;
     signal ALUOp : unsigned(3 downto 0);
     signal readData1, readData2 : unsigned(15 downto 0);
@@ -169,8 +169,8 @@ begin
         );
     
     LSHIFT0 : ShiftLeft
-        generic map(N => 12;
-                    S => 1);
+        generic map(N => 12,
+                    S => 1)
         port map(
             data_in => instrout(11 downto 0),
             data_out => shift0Out(11 downto 0)
@@ -185,7 +185,7 @@ begin
             RegWrite => regWrite,
             MemRead => memRead,
             MemWrite => memWrite,
-            Branch => branch
+            Branch => branch,
             Jump => jump,
             ALUOp => ALUoP
         );
@@ -196,7 +196,7 @@ begin
             A => instrOut(8 downto 6),
             B => instrOut(5 downto 3),
             Sel => ALUSrc,
-            Y => mux1Out
+            Y => mux0Out
         );
     
     RF: Registers --My Register File
@@ -205,7 +205,7 @@ begin
             RegWr => RegWr,
             Ra    => instrOut(11 downto 9),
             Rb    => instrOut(8 downto 6),
-            Rw    => mux1Out,
+            Rw    => mux0Out,
             busW  => mux4Out,
             busA  => readData1,
             busB  => readData2
@@ -254,7 +254,7 @@ begin
         generic map ( N => 16 )
         port map (
             A        => adderOut,
-            B        => shiftOut,
+            B        => shift1Out,
             ALUctr   => "0000",
             Result   => ALU1Out,
             Zero     => open,
@@ -298,6 +298,6 @@ begin
             Y => mux4Out
         );
     
-    Result <= mux3Out; --Final Result
+    Result <= mux4Out; --Final Result
 
 end Behavioral;
