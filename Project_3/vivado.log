@@ -3,10 +3,10 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Wed Nov  5 14:35:49 2025
-# Process ID         : 69436
+# Start of session at: Wed Nov  5 15:30:16 2025
+# Process ID         : 73548
 # Current directory  : C:/Repositories/EGRE_426/Project_3
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent66524 C:\Repositories\EGRE_426\Project_3\Project_3.xpr
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent72604 C:\Repositories\EGRE_426\Project_3\Project_3.xpr
 # Log file           : C:/Repositories/EGRE_426/Project_3/vivado.log
 # Journal file       : C:/Repositories/EGRE_426/Project_3\vivado.jou
 # Running On         : DESKTOP-9FRSU92
@@ -19,7 +19,7 @@
 # Host memory        : 16849 MB
 # Swap memory        : 4179 MB
 # Total Virtual      : 21028 MB
-# Available Virtual  : 4907 MB
+# Available Virtual  : 5376 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Repositories/EGRE_426/Project_3/Project_3.xpr
@@ -49,6 +49,7 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 availab
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu208ld\production\2.0\board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu216ld\production\2.0\board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/2025.1/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu670ld\1.0\board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [Project 1-313] Project file moved from 'C:/Users/julio/Documents/EGRE 426 Computer Organization & Design/Lab 4/EGRE_426/Project_3' since last save.
 INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Repositories/EGRE_426/Project_3/Project_3.gen/sources_1'.
 Scanning sources...
 Finished scanning sources
@@ -82,13 +83,672 @@ WARNING: [Project 1-5713] Board part '' set for the project  is not found. Board
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
-open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:09 . Memory (MB): peak = 1730.656 ; gain = 138.609
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 1736.020 ; gain = 160.664
+update_compile_order -fileset sim_1
 update_compile_order -fileset sources_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd w ]
-add_files -fileset sim_1 C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd
+set_property top Top_Level [current_fileset]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
+
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
 update_compile_order -fileset sim_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ALUControl_TB.vhd w ]
-add_files -fileset sim_1 C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ALUControl_TB.vhd
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
 update_compile_order -fileset sim_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
+
+set_property source_mgmt_mode DisplayOnly [current_project]
+reorder_files -fileset sim_1 -after C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
+
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'ControlUnit_TB'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/2025.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'ControlUnit_TB' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ControlUnit_TB_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALUControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALUControl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/DataMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DataMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Full_Adder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Full_Adder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/InstructionMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'InstructionMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/MUX.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MUX2to1'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PCAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramCounter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ProgramCounter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Registers.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Registers'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/SignExtend.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SignExtend'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/left_shift.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ShiftLeft'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/nBitAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'nBitAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Top_Level.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Top_Level'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd" into library xil_defaultlib
+ERROR: [VRFC 10-4982] syntax error near '@' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:1]
+ERROR: [VRFC 10-2989] 'ieee' is not declared [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:1]
+ERROR: [VRFC 10-2989] 'ieee' is not declared [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:6]
+ERROR: [VRFC 10-4982] syntax error near '@' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:10]
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit_TB'
+ERROR: [VRFC 10-9458] unit 'controlunit_tb' is ignored due to previous errors [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:10]
+INFO: [VRFC 10-8704] VHDL file 'C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd' is ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
+
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'ControlUnit_TB'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/2025.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'ControlUnit_TB' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ControlUnit_TB_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALUControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALUControl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/DataMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DataMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Full_Adder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Full_Adder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/InstructionMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'InstructionMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/MUX.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MUX2to1'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PCAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramCounter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ProgramCounter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Registers.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Registers'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/SignExtend.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SignExtend'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/left_shift.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ShiftLeft'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/nBitAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'nBitAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Top_Level.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Top_Level'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd" into library xil_defaultlib
+ERROR: [VRFC 10-2989] 'ieee' is not declared [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:1]
+ERROR: [VRFC 10-2989] 'ieee' is not declared [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:2]
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit_TB'
+ERROR: [VRFC 10-9458] unit 'controlunit_tb' is ignored due to previous errors [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:4]
+INFO: [VRFC 10-8704] VHDL file 'C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd' is ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
+
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'ControlUnit_TB'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/2025.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'ControlUnit_TB' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ControlUnit_TB_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALUControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALUControl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/DataMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DataMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Full_Adder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Full_Adder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/InstructionMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'InstructionMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/MUX.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MUX2to1'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PCAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramCounter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ProgramCounter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Registers.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Registers'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/SignExtend.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SignExtend'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/left_shift.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ShiftLeft'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/nBitAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'nBitAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Top_Level.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Top_Level'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit_TB'
+ERROR: [VRFC 10-4982] syntax error near 'signal' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:12]
+ERROR: [VRFC 10-4982] syntax error near ':=' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:14]
+ERROR: [VRFC 10-4982] syntax error near ':=' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:15]
+ERROR: [VRFC 10-4982] syntax error near ':=' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:16]
+ERROR: [VRFC 10-4982] syntax error near ':=' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:17]
+ERROR: [VRFC 10-4982] syntax error near ':=' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:18]
+ERROR: [VRFC 10-4982] syntax error near ':=' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:19]
+ERROR: [VRFC 10-4982] syntax error near ':=' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:20]
+ERROR: [VRFC 10-4982] syntax error near ':=' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:21]
+ERROR: [VRFC 10-4982] syntax error near ':=' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:22]
+ERROR: [VRFC 10-4982] syntax error near ':=' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:23]
+ERROR: [VRFC 10-2942] 'instrsig' is illegal in an expression [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:39]
+ERROR: [VRFC 10-2965] 'instrsig' is not a signal [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:40]
+ERROR: [VRFC 10-2945] 'controlunit' is not a component [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:45]
+ERROR: [VRFC 10-2942] 'instrsig' is illegal in an expression [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:47]
+ERROR: [VRFC 10-9439] type error near 'instrsig'; expected type 'unsigned' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:47]
+ERROR: [VRFC 10-9439] type error near 'regdstsig'; expected type 'std_logic' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:48]
+ERROR: [VRFC 10-9439] type error near 'alusrcsig'; expected type 'std_logic' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:49]
+ERROR: [VRFC 10-9439] type error near 'memtoregsig'; expected type 'std_logic' [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:50]
+INFO: [VRFC 10-10021] Sorry, too many errors..
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ALUControl_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
+
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'ControlUnit_TB'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/2025.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'ControlUnit_TB' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ControlUnit_TB_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALUControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALUControl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/DataMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DataMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Full_Adder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Full_Adder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/InstructionMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'InstructionMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/MUX.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MUX2to1'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PCAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramCounter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ProgramCounter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Registers.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Registers'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/SignExtend.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SignExtend'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/left_shift.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ShiftLeft'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/nBitAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'nBitAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Top_Level.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Top_Level'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit_TB'
+ERROR: [VRFC 10-2945] 'controlunit' is not a component [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:43]
+ERROR: [VRFC 10-9458] unit 'behavioral' is ignored due to previous errors [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd:8]
+INFO: [VRFC 10-8704] VHDL file 'C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd' is ignored due to errors
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1770.605 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '6' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1770.605 ; gain = 0.000
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ControlUnit.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\top_level_sherif_tb.vhdl:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\MUX.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\Top_Level.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\top_level_tb.vhdl:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\MUX.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\MUX.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ControlUnit.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\top_level_sherif_tb.vhdl:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\MUX.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\Top_Level.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\top_level_tb.vhdl:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\Top_Level.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\Top_Level.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ControlUnit.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\top_level_sherif_tb.vhdl:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\MUX.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\Top_Level.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\top_level_tb.vhdl:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\top_level_sherif_tb.vhdl:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\top_level_sherif_tb.vhdl:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\ControlUnit.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\top_level_sherif_tb.vhdl:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\MUX.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sources_1\new\Top_Level.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\top_level_tb.vhdl:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\top_level_tb.vhdl:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\top_level_tb.vhdl:]
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'ControlUnit_TB'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/2025.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'ControlUnit_TB' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ControlUnit_TB_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALUControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALUControl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/DataMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DataMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Full_Adder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Full_Adder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/InstructionMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'InstructionMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/MUX.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MUX2to1'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PCAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramCounter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ProgramCounter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Registers.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Registers'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/SignExtend.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SignExtend'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/left_shift.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ShiftLeft'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/nBitAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'nBitAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Top_Level.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Top_Level'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit_TB'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ALUControl_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALUControl_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ALU_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/DataMemoryTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DataMemory_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/Full_Adder_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Full_Adder_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/InstructionMemoryTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'InstructionMemory_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/MUX_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MUX2to1_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/PCAdder_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PCAdder_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ProgramCounter_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ProgramCounter_tb'
+ERROR: [VRFC 10-2989] 'width' is not declared [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ProgramCounter_TB.vhd:16]
+ERROR: [VRFC 10-2989] 'width' is not declared [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ProgramCounter_TB.vhd:17]
+ERROR: [VRFC 10-719] formal port/generic <width> is not declared in <programcounter> [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ProgramCounter_TB.vhd:31]
+ERROR: [VRFC 10-9458] unit 'tb' is ignored due to previous errors [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ProgramCounter_TB.vhd:8]
+INFO: [VRFC 10-8704] VHDL file 'C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ProgramCounter_TB.vhd' is ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'ControlUnit_TB'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/2025.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'ControlUnit_TB' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ControlUnit_TB_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALUControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALUControl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/DataMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DataMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Full_Adder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Full_Adder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/InstructionMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'InstructionMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/MUX.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MUX2to1'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PCAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramCounter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ProgramCounter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Registers.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Registers'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/SignExtend.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SignExtend'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/left_shift.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ShiftLeft'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/nBitAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'nBitAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Top_Level.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Top_Level'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit_TB'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ALUControl_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALUControl_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ALU_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/DataMemoryTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DataMemory_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/Full_Adder_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Full_Adder_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/InstructionMemoryTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'InstructionMemory_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/MUX_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MUX2to1_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/PCAdder_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PCAdder_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ProgramCounter_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ProgramCounter_tb'
+ERROR: [VRFC 10-2989] 'width' is not declared [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ProgramCounter_TB.vhd:16]
+ERROR: [VRFC 10-2989] 'width' is not declared [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ProgramCounter_TB.vhd:17]
+ERROR: [VRFC 10-719] formal port/generic <width> is not declared in <programcounter> [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ProgramCounter_TB.vhd:31]
+ERROR: [VRFC 10-9458] unit 'tb' is ignored due to previous errors [C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ProgramCounter_TB.vhd:8]
+INFO: [VRFC 10-8704] VHDL file 'C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ProgramCounter_TB.vhd' is ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'ControlUnit_TB'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/2025.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'ControlUnit_TB' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ControlUnit_TB_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALUControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALUControl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/DataMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DataMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Full_Adder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Full_Adder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/InstructionMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'InstructionMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/MUX.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MUX2to1'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PCAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramCounter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ProgramCounter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Registers.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Registers'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/SignExtend.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SignExtend'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/left_shift.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ShiftLeft'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/nBitAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'nBitAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Top_Level.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Top_Level'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit_TB'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ALUControl_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALUControl_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ALU_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/DataMemoryTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DataMemory_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/Full_Adder_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Full_Adder_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/InstructionMemoryTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'InstructionMemory_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/MUX_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MUX2to1_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/PCAdder_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PCAdder_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ProgramCounter_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ProgramCounter_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/SignExtend_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SignExtend_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/left_shift_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ShiftLeft_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/nBitAdder_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'nBitAdder_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/registers_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Registers_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/top_level_sherif_tb.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_level_sherif_tb'
+ERROR: [VRFC 10-719] formal port/generic <zero> is not declared in <top_level> [C:/Repositories/EGRE_426/Project_3/top_level_sherif_tb.vhdl:123]
+ERROR: [VRFC 10-3353] formal port 'reset' has no actual or default value [C:/Repositories/EGRE_426/Project_3/top_level_sherif_tb.vhdl:116]
+ERROR: [VRFC 10-9458] unit 'behavior' is ignored due to previous errors [C:/Repositories/EGRE_426/Project_3/top_level_sherif_tb.vhdl:8]
+INFO: [VRFC 10-8704] VHDL file 'C:/Repositories/EGRE_426/Project_3/top_level_sherif_tb.vhdl' is ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\top_level_sherif_tb.vhdl:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ProgramCounter_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ProgramCounter_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ProgramCounter_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ControlUnit_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\top_level_sherif_tb.vhdl:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\Project_3.srcs\sim_1\new\ProgramCounter_TB.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\top_level_sherif_tb.vhdl:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Repositories\EGRE_426\Project_3\top_level_sherif_tb.vhdl:]
+ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
+
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'ControlUnit_TB'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/2025.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'ControlUnit_TB' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ControlUnit_TB_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ALUControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALUControl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ControlUnit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/DataMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DataMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Full_Adder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Full_Adder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/InstructionMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'InstructionMemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/MUX.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MUX2to1'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PCAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/ProgramCounter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ProgramCounter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Registers.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Registers'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/SignExtend.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SignExtend'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/left_shift.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ShiftLeft'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/nBitAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'nBitAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/Top_Level.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Top_Level'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ControlUnit_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ControlUnit_TB'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ALUControl_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALUControl_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ALU_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/DataMemoryTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DataMemory_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/Full_Adder_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Full_Adder_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/InstructionMemoryTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'InstructionMemory_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/MUX_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MUX2to1_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/PCAdder_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PCAdder_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/ProgramCounter_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ProgramCounter_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/SignExtend_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SignExtend_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/left_shift_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ShiftLeft_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/nBitAdder_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'nBitAdder_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/registers_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Registers_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/top_level_sherif_tb.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sim_1/new/top_level_tb.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Top_Level_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot ControlUnit_TB_behav xil_defaultlib.ControlUnit_TB -log elaborate.log"
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot ControlUnit_TB_behav xil_defaultlib.ControlUnit_TB -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.ControlUnit [controlunit_default]
+Compiling architecture behavioral of entity xil_defaultlib.controlunit_tb
+Built simulation snapshot ControlUnit_TB_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Repositories/EGRE_426/Project_3/Project_3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "ControlUnit_TB_behav -key {Behavioral:sim_1:Functional:ControlUnit_TB} -tclbatch {ControlUnit_TB.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source ControlUnit_TB.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+xsim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1806.320 ; gain = 26.949
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'ControlUnit_TB_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1806.320 ; gain = 35.715
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  5 15:47:23 2025...
