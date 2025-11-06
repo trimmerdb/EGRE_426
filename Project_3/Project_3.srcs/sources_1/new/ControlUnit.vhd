@@ -31,7 +31,7 @@ begin
         MemWrite <= '0';
         Branch   <= '0';
         Jump     <= '0';
-        ALUOp    <= "0000";
+        ALUOp    <= "1111"; ---1111 for no alu op
 
         case instr is
 
@@ -39,36 +39,36 @@ begin
             when "0000" =>
                 RegDst   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0000";  -- R-type: defer to func bits
+                ALUOp    <= "1111";  -- R-type: defer to func bits
             when "0001" =>
                 RegDst   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0001";  -- R-type: defer to func bits
+                ALUOp    <= "1111";  -- R-type: defer to func bits
 
             -- I-type arithmetic
             when "0010" =>  -- ADDI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0010";  -- add
+                ALUOp    <= "0000";  -- add
 
             when "0011" =>  -- SUBI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0011";  -- sub
+                ALUOp    <= "0001";  -- sub
             when "0100" =>  -- MulI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0010";  -- mul
+                ALUOp    <= "1000";  -- mul
 
             when "0101" =>  -- DivI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0011";  -- div
+                ALUOp    <= "1001";  -- div
 
             when "0110" =>  -- ANDI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0110";  -- and
+                ALUOp    <= "0010";  -- and
 
             when "0111" =>  -- ORI
                 ALUSrc   <= '1';

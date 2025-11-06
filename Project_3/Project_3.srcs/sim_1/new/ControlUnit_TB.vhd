@@ -1,24 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 11/05/2025 02:37:10 PM
--- Design Name: 
--- Module Name: ControlUnit_TB - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -52,26 +31,18 @@ architecture Behavioral of ControlUnit_TB is
     signal ALUOpSig : unsigned(3 downto 0) := X"0";
 
 begin
-
---    clock_proc : process
---    begin
---        while true loop
---            clk_sig <= '0';
---            wait for TIME_DELAY / 2;
---            clk_sig <= '1';
---            wait for TIME_DELAY / 2;
---        end loop;
---    end process clock_proc;
-    
     stimulus : process
     begin
-        while(instrSig <= X"F") loop
-            instrSig <= instrSig+1;
+        loop
             wait for 10 ns;
+            instrSig <= instrSig+1;
+            if instrSig = X"E" then
+                wait;
+            end if;
         end loop;
     end process stimulus;
     
-    dut : work.ControlUnit(Behavioral)
+    dut : entity work.ControlUnit(Behavioral)
         port map(
             instr => instrSig,
             RegDst => regDstSig,
