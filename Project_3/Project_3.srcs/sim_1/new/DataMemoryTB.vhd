@@ -25,7 +25,7 @@ architecture tb of DataMemory_tb is
     signal MemWrite  : std_logic := '0';
     signal Address   : unsigned(15 downto 0) := (others => '0');
     signal WriteData : unsigned(15 downto 0) := (others => '0');
-    signal ReadData  : unsigned(15 downto 0);
+    signal ReadData  : unsigned(15 downto 0) := (others => '0');
 
     constant CLK_PERIOD : time := 10 ns;
 
@@ -43,7 +43,6 @@ begin
             ReadData  => ReadData
         );
 
-
     clk_process : process
     begin
         while true loop
@@ -56,43 +55,33 @@ begin
 
     stim_proc : process
     begin
-
-        Address   <= x"00000004";
-        WriteData <= x"0000000A";
+        Address   <= to_unsigned(4, 16);
+        WriteData <= to_unsigned(10, 16);
         MemWrite  <= '1';
+        wait for CLK_PERIOD;
+        MemWrite  <= '0';
+        wait for CLK_PERIOD;
+        MemRead   <= '1';
+        wait for CLK_PERIOD;
         MemRead   <= '0';
         wait for CLK_PERIOD;
 
-        MemWrite <= '0';
-        wait for CLK_PERIOD;
-
-        MemRead <= '1';
-        wait for CLK_PERIOD;
-
-        MemRead <= '0';
-        wait for CLK_PERIOD;
-
-        Address   <= x"00000008";
-        WriteData <= x"000000FF";
+        Address   <= to_unsigned(100, 16);
+        WriteData <= to_unsigned(255, 16);
         MemWrite  <= '1';
         wait for CLK_PERIOD;
-
-        MemWrite <= '0';
+        MemWrite  <= '0';
+        wait for CLK_PERIOD;
+        MemRead   <= '1';
+        wait for CLK_PERIOD;
+        MemRead   <= '0';
         wait for CLK_PERIOD;
 
-        MemRead <= '1';
+        Address   <= to_unsigned(12, 16);
+        MemRead   <= '1';
         wait for CLK_PERIOD;
-
-        MemRead <= '0';
-        wait for CLK_PERIOD;
-
-        Address <= x"0000000C";
-        MemRead <= '1';
-        wait for CLK_PERIOD;
-
-        MemRead <= '0';
+        MemRead   <= '0';
         wait for 3 * CLK_PERIOD;
-
         wait;
     end process;
 

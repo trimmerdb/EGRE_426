@@ -69,6 +69,7 @@ begin
     begin
         alu_result <= (others => '0');
         Carryout   <= '0';
+        Overflow   <= '0';
 
         case ALUctr is
             when "0000" =>  -- ADD
@@ -123,14 +124,13 @@ begin
              when "1001" =>  -- DIVISION
                 if B = 0 then
                     alu_result <= (others => '0');  -- divide by zero
-                    Overflow   <= '1';
                     Carryout   <= '0';
                 else
                     dividend  := A;
                     divisor   := B;
                     remainder := (others => '0');
                     quotient  := (others => '0');
-            
+
                     for i in N-1 downto 0 loop
                         -- Shift left remainder and bring down next dividend bit
                         remainder := shift_left(remainder, 1);
@@ -185,6 +185,8 @@ begin
         elsif ALUctr = "0001" then  -- SUB
             Overflow <= (sign_a and not sign_b and not sign_r) or
                         (not sign_a and sign_b and sign_r);
+        elsif (ALUctr = "1001" and B = 0) then
+            Overflow <= '1';
         else
             Overflow <= '0';
         end if;
