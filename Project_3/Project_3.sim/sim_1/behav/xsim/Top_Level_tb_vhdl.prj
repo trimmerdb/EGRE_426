@@ -28,7 +28,6 @@ vhdl xil_defaultlib  \
 "../../../../Project_3.srcs/sim_1/new/nBitAdder_TB.vhd" \
 "../../../../Project_3.srcs/sim_1/new/registers_tb.vhd" \
 "../../../../top_level_sherif_tb.vhdl" \
-"../../../../Project_3.srcs/sim_1/new/top_level_tb.vhdl" \
 
 # Do not sort compile order
 nosort
