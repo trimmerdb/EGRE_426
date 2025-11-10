@@ -16,7 +16,7 @@ end Top_Level;
 architecture Behavioral of Top_Level is
 -- signals and components are arranged from left to right and top to bottom
 -- using the CPU block diagram
-    signal PCIn, PCOut : unsigned(15 downto 0);
+    signal PCIn, PCOut : unsigned(15 downto 0) := X"0000";
     signal adderOut : unsigned(15 downto 0);
     signal instrOut : unsigned(15 downto 0);
     signal mux0Out : unsigned(2 downto 0);
@@ -199,7 +199,7 @@ begin
     RF: Registers --My Register File
         port map (
             clk   => clk,
-            RegWr => RegWr,
+            RegWr => regWrite,
             Ra    => instrOut(11 downto 9),
             Rb    => instrOut(8 downto 6),
             Rw    => mux0Out,
@@ -281,8 +281,8 @@ begin
     
     MUX3 : Mux2to1
         port map(
-            A => shift0Out,
-            B => mux2Out,
+            A => mux2Out,
+            B => shift0Out,
             Sel => jump,
             Y => PCIn
         );

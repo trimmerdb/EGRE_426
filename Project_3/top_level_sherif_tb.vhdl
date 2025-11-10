@@ -52,7 +52,7 @@ begin
     wait for TIME_DELAY;
     reset_sig <= '0';
 
-    for i in 0 to 50 loop
+    for i in 0 to 150 loop
       wait for TIME_DELAY;
     end loop;
 

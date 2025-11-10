@@ -48,6 +48,8 @@ begin
             when "0101" => ALUctr <= "1001"; -- Div
             when "0110" => ALUctr <= "0010"; -- AND
             when "0111" => ALUctr <= "0011"; -- OR
+            when "1000" => ALUctr <= "0100"; -- SLL
+            when "1001" => ALUctr <= "0101"; -- SRL
             when others =>
                 ALUctr <= "0000";
         end case;

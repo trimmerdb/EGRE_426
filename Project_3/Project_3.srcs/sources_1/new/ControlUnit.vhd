@@ -39,41 +39,41 @@ begin
             when "0000" =>
                 RegDst   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "1111";  -- R-type: defer to func bits
+                ALUOp    <= "0000";  -- R-type: defer to func bits
             when "0001" =>
                 RegDst   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "1111";  -- R-type: defer to func bits
+                ALUOp    <= "0001";  -- R-type: defer to func bits
 
             -- I-type arithmetic
             when "0010" =>  -- ADDI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0000";  -- add
+                ALUOp    <= "0010";  -- add
 
             when "0011" =>  -- SUBI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0001";  -- sub
+                ALUOp    <= "0011";  -- sub
             when "0100" =>  -- MulI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "1000";  -- mul
+                ALUOp    <= "0100";  -- mul
 
             when "0101" =>  -- DivI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "1001";  -- div
+                ALUOp    <= "0101";  -- div
 
             when "0110" =>  -- ANDI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0010";  -- and
+                ALUOp    <= "0110";  -- and
 
             when "0111" =>  -- ORI
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0011";  -- or
+                ALUOp    <= "0111";  -- or
 
             when "1000" =>  -- LW
                 ALUSrc   <= '1';
@@ -105,12 +105,12 @@ begin
             when "1110" =>  -- Shift Left Logical Immediate
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0100";
+                ALUOp    <= "1000";
 
             when "1111" =>  -- Shift Right Logical Immediate
                 ALUSrc   <= '1';
                 RegWrite <= '1';
-                ALUOp    <= "0101";
+                ALUOp    <= "1001";
 
             when others =>
                 null;

@@ -13,7 +13,7 @@ entity Registers is
 end Registers;
 
 architecture Behavioral of Registers is
-    type reg_array is array (15 downto 0) of unsigned(15 downto 0);
+    type reg_array is array (7 downto 0) of unsigned(15 downto 0);
     signal regs : reg_array := (others => (others => '0'));
 begin
     process(clk)
