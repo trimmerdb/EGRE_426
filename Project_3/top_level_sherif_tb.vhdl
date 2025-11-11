@@ -10,9 +10,6 @@ architecture Behavioral of Top_Level_tb is
 
   signal clk_sig    : std_logic := '0';
   signal reset_sig  : std_logic := '0';
-  signal RegWr_sig  : std_logic := '0'; 
-  signal Rd_sig, Rs_sig, Rt_sig : unsigned(2 downto 0) := (others => '0');
-  signal ALUctr_sig : unsigned(3 downto 0) := (others => '0');
   signal Result_sig : unsigned(15 downto 0);
 
 begin
@@ -23,11 +20,6 @@ begin
     port map (
       clk    => clk_sig,
       Reset  => reset_sig,
-      RegWr  => RegWr_sig,
-      Rd     => Rd_sig,
-      Rs     => Rs_sig,
-      Rt     => Rt_sig,
-      ALUctr => ALUctr_sig,
       Result => Result_sig
     );
 

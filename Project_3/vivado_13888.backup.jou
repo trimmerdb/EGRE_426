@@ -3,10 +3,10 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Mon Nov 10 14:03:59 2025
-# Process ID         : 69780
+# Start of session at: Mon Nov 10 11:35:09 2025
+# Process ID         : 13888
 # Current directory  : C:/Repositories/EGRE_426/Project_3
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent60652 C:\Repositories\EGRE_426\Project_3\Project_3.xpr
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent37860 C:\Repositories\EGRE_426\Project_3\Project_3.xpr
 # Log file           : C:/Repositories/EGRE_426/Project_3/vivado.log
 # Journal file       : C:/Repositories/EGRE_426/Project_3\vivado.jou
 # Running On         : DESKTOP-9FRSU92
@@ -19,10 +19,16 @@
 # Host memory        : 16849 MB
 # Swap memory        : 4178 MB
 # Total Virtual      : 21027 MB
-# Available Virtual  : 5851 MB
+# Available Virtual  : 4888 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Repositories/EGRE_426/Project_3/Project_3.xpr
+launch_simulation
+source Top_Level_tb.tcl
+close_sim
+launch_simulation
+source Top_Level_tb.tcl
+close_sim
 launch_simulation
 source Top_Level_tb.tcl
 restart
@@ -30,4 +36,50 @@ run 10 us
 close_sim
 launch_simulation
 source Top_Level_tb.tcl
+restart
+run 10 us
+close_sim
+launch_simulation
+source Top_Level_tb.tcl
+restart
+run 10 us
+restart
+run 10 us
+restart
+run 10 us
+close_sim
+launch_simulation
+source Top_Level_tb.tcl
+restart
+run 10 us
+restart
+run 10 us
+close_sim
+launch_simulation
+source Top_Level_tb.tcl
+restart
+run 10 us
+restart
+run 10 us
+close_sim
+launch_simulation
+launch_simulation
+source Top_Level_tb.tcl
+restart
+run 10 us
+restart
+run 10 us
+close_sim
+launch_simulation
+launch_simulation
+source Top_Level_tb.tcl
+restart
+run 10 us
+restart
+run 10 us
+close_sim
+launch_simulation
+source Top_Level_tb.tcl
+restart
+run 10 us
 close_sim

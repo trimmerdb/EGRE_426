@@ -6,9 +6,6 @@ entity Top_Level is
     Port (
         clk       : in  STD_LOGIC;
         Reset     : in STD_LOGIC;
-        RegWr     : in  STD_LOGIC;
-        Rd, Rs, Rt : in  unsigned(2 downto 0);
-        ALUctr    : in  unsigned(3 downto 0);
         Result    : out unsigned(15 downto 0)
     );
 end Top_Level;
