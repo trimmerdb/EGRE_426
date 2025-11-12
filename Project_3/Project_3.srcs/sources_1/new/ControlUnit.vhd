@@ -37,10 +37,12 @@ begin
 
             -- R-type
             when "0000" =>
+                MemToReg <= '1';
                 RegDst   <= '1';
                 RegWrite <= '1';
                 ALUOp    <= "0000";  -- R-type: defer to func bits
             when "0001" =>
+                MemToReg <= '1';
                 RegDst   <= '1';
                 RegWrite <= '1';
                 ALUOp    <= "0001";  -- R-type: defer to func bits
@@ -48,36 +50,41 @@ begin
             -- I-type arithmetic
             when "0010" =>  -- ADDI
                 ALUSrc   <= '1';
+                MemToReg <= '1';
                 RegWrite <= '1';
                 ALUOp    <= "0010";  -- add
 
             when "0011" =>  -- SUBI
                 ALUSrc   <= '1';
+                MemToReg <= '1';
                 RegWrite <= '1';
                 ALUOp    <= "0011";  -- sub
             when "0100" =>  -- MulI
                 ALUSrc   <= '1';
+                MemToReg <= '1';
                 RegWrite <= '1';
                 ALUOp    <= "0100";  -- mul
 
             when "0101" =>  -- DivI
                 ALUSrc   <= '1';
+                MemToReg <= '1';
                 RegWrite <= '1';
                 ALUOp    <= "0101";  -- div
 
             when "0110" =>  -- ANDI
                 ALUSrc   <= '1';
+                MemToReg <= '1';
                 RegWrite <= '1';
                 ALUOp    <= "0110";  -- and
 
             when "0111" =>  -- ORI
                 ALUSrc   <= '1';
+                MemToReg <= '1';
                 RegWrite <= '1';
                 ALUOp    <= "0111";  -- or
 
             when "1000" =>  -- LW
                 ALUSrc   <= '1';
-                MemToReg <= '1';
                 RegWrite <= '1';
                 MemRead  <= '1';
                 ALUOp    <= "0000";  -- add for address calc
@@ -104,11 +111,13 @@ begin
                 
             when "1110" =>  -- Shift Left Logical Immediate
                 ALUSrc   <= '1';
+                MemToReg <= '1';
                 RegWrite <= '1';
                 ALUOp    <= "1000";
 
             when "1111" =>  -- Shift Right Logical Immediate
                 ALUSrc   <= '1';
+                MemToReg <= '1';
                 RegWrite <= '1';
                 ALUOp    <= "1001";
 
