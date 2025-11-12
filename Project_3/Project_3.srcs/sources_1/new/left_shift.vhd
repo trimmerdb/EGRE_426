@@ -16,14 +16,6 @@ end entity ShiftLeft;
 
 architecture Behavioral of ShiftLeft is
 begin
-    process(data_in)
-        variable temp : unsigned(WIDTH_OUT-1 downto 0);
-    begin
-        if SHIFT_SIZE < WIDTH_IN then
-            temp := data_in(WIDTH_IN-1-SHIFT_SIZE downto 0) & (SHIFT_SIZE-1 downto 0 => '0');
-        else
-            temp := (others => '0');
-        end if;
-        data_out <= temp;
-    end process;
+    data_out <= shift_left(data_in, 1);
 end architecture Behavioral;
+
