@@ -8,7 +8,7 @@ entity ALU is
         A, B     : in  unsigned(N-1 downto 0);
         ALUctr   : in  unsigned(3 downto 0);
         Result   : out unsigned(N-1 downto 0);
-        Zero, Overflow, Carryout : out STD_LOGIC
+        Zero, Overflow, Carryout, Negative  : out STD_LOGIC
     );
 end ALU;
 
@@ -89,11 +89,11 @@ begin
                 Carryout   <= '0';
 
             when "0100" =>  -- Logical Left Shift
-                alu_result <= shift_left(A, 1);
+                alu_result <= shift_left(A,to_integer(unsigned(B)));
                 Carryout   <= '0';
 
             when "0101" =>  -- Logical Right Shift
-                alu_result <= shift_right(A, 1);
+                alu_result <= shift_right(A, to_integer(unsigned(B)));
                 Carryout   <= '0';
 
             when "0110" =>  -- Arithmetic Left Shift
@@ -201,7 +201,16 @@ begin
             Zero <= '0';
         end if;
     end process;
-
+    
+    -- Negative flag
+    process(ALUctr, alu_result)
+    begin
+        if ALUctr = "0001" then  -- SUB
+            Negative <= alu_result(N-1);  -- Sign bit of subtraction result
+        else
+            Negative <= '0';
+        end if;
+    end process;
     Result <= alu_result;
 
 end Behavioral;
