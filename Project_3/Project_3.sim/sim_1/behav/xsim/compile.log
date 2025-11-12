@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/my1du/Repos/EGRE_426/Project_3/Project_3.srcs/sources_1/new/InstructionMemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Repositories/EGRE_426/Project_3/Project_3.srcs/sources_1/new/InstructionMemory.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'InstructionMemory'

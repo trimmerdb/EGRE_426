@@ -22,7 +22,7 @@ Compiling architecture behavioral of entity xil_defaultlib.Registers [registers_
 Compiling architecture behavioral of entity xil_defaultlib.SignExtend [signextend_default]
 Compiling architecture behavioral of entity xil_defaultlib.MUX2to1 [mux2to1_default]
 Compiling architecture behavioral of entity xil_defaultlib.ALUControl [alucontrol_default]
-Compiling architecture behavioral of entity xil_defaultlib.ShiftLeft [\ShiftLeft(shift_size=2)\]
+Compiling architecture behavioral of entity xil_defaultlib.ShiftLeft [shiftleft_default]
 Compiling architecture behavioral of entity xil_defaultlib.Full_Adder [full_adder_default]
 Compiling architecture behavioral of entity xil_defaultlib.nBitAdder [\nBitAdder(n=16)\]
 Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]

@@ -228,6 +228,9 @@ begin
         );
     
     LSHIFT1 : ShiftLeft
+      generic map(WIDTH_IN => 16,
+                 WIDTH_OUT => 16,
+                 SHIFT_SIZE=> 1)
         port map(
             data_in => signExtendOut,
             data_out => shift1Out
