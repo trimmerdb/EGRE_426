@@ -216,7 +216,7 @@ begin
             out16 => signExtendOut
         );
    
-    MUX1 : Mux2to1-- MUX0 RESERVED FOR register input
+    MUX1 : Mux2to1
         port map(
             A => readData2,
             B => signExtendOut,
