@@ -117,14 +117,14 @@ begin
     process(clk)
         variable index : integer;
     begin
-        if rising_edge(clk) then
+--        if rising_edge(clk) then
             index := to_integer(addr);
             if to_integer(addr) >= 0 and to_integer(addr) < DEPTH then
                 instr <= ROM(to_integer(addr));
             else
                 instr <= (others => '0');
             end if;
-        end if;
+--        end if;
     end process;
 
 end architecture Behavioral;
