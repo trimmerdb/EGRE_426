@@ -16,7 +16,9 @@ architecture Behavioral of ControlUnit_TB is
     signal regWriteSig : std_logic := '0';
     signal memReadSig : std_logic := '0';
     signal memWriteSig : std_logic := '0';
-    signal branchSig : std_logic := '0';
+    signal brancheqSig : std_logic := '0';
+    signal branchgtSig : std_logic := '0';
+    signal branchltSig : std_logic := '0';
     signal jumpSig : std_logic := '0';
     signal ALUOpSig : unsigned(3 downto 0) := X"0";
 
@@ -41,7 +43,9 @@ begin
             RegWrite => regWriteSig,
             MemRead => memReadSig,
             MemWrite => memWriteSig,
-            Branch => branchSig,
+            BranchEQ => brancheqSig,
+            BranchGT => branchgtSig,
+            BranchLT => branchltSig,
             Jump => jumpSig,
             ALUOp => ALUOpSig
         );

@@ -18,7 +18,7 @@ architecture Behavioral of Top_Level is
     signal instrOut : unsigned(15 downto 0);
     signal mux0Out : unsigned(2 downto 0);
     signal shift0Out : unsigned(15 downto 0) := X"0000";
-    signal regDst, ALUSrc, memtoReg, regWrite, memRead, memWrite, branch, jump : std_logic;
+    signal regDst, ALUSrc, memtoReg, regWrite, memRead, memWrite, brancheq, branchgt, branchlt, jump : std_logic;
     signal ALUOp : unsigned(3 downto 0);
     signal readData1, readData2 : unsigned(15 downto 0);
     signal signExtendOut : unsigned(15 downto 0);
@@ -68,7 +68,9 @@ architecture Behavioral of Top_Level is
             RegWrite  : out std_logic;
             MemRead   : out std_logic;
             MemWrite  : out std_logic;
-            Branch    : out std_logic;
+            BranchEQ    : out std_logic;
+            BranchGT    : out std_logic;
+            BranchLT    : out std_logic;
             Jump      : out std_logic;
             ALUOp     : out unsigned(3 downto 0)
         );
@@ -180,7 +182,9 @@ begin
             RegWrite => regWrite,
             MemRead => memRead,
             MemWrite => memWrite,
-            Branch => branch,
+            BranchEQ => brancheq,
+            BranchGT => branchgt,
+            BranchLT => branchlt,
             Jump => jump,
             ALUOp => ALUoP
         );
@@ -261,7 +265,7 @@ begin
             Carryout => open
         );
     
-    andOut <= (Branch and Zero) or (Branch and Negative) or (Branch and (NOT Zero and NOT Negative));
+    andOut <= (brancheq and Zero) or (branchlt and Negative) or (branchgt and (NOT Zero and NOT Negative));
     
     DATA_MEMORY : dataMemory
         port map(

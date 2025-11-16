@@ -11,7 +11,9 @@ entity ControlUnit is
         RegWrite  : out std_logic;
         MemRead   : out std_logic;
         MemWrite  : out std_logic;
-        Branch    : out std_logic;
+        BranchEQ    : out std_logic;
+        BranchGT    : out std_logic;
+        BranchLT    : out std_logic;
         Jump      : out std_logic;
         ALUOp     : out unsigned(3 downto 0)
     );
@@ -29,7 +31,9 @@ begin
         RegWrite <= '0';
         MemRead  <= '0';
         MemWrite <= '0';
-        Branch   <= '0';
+        BranchEQ   <= '0';
+        BranchGT   <= '0';
+        BranchLT   <= '0';
         Jump     <= '0';
         ALUOp    <= "1111"; ---1111 for no alu op
 
@@ -94,15 +98,15 @@ begin
                 ALUOp    <= "0010";  -- add for address calc
 
             when "1010" =>  -- BEQ
-                Branch   <= '1';
+                BranchEQ   <= '1';
                 ALUOp    <= "0011";  -- sub for equality check
                 
             when "1011" =>  -- BEQlt
-                Branch   <= '1';
+                BranchLT   <= '1';
                 ALUOp    <= "0011";  -- sub for equality check
                 
             when "1100" =>  -- BEQgt
-                Branch   <= '1';
+                BranchGT   <= '1';
                 ALUOp    <= "0011";  -- sub for equality check
 
             when "1101" =>  -- JUMP
