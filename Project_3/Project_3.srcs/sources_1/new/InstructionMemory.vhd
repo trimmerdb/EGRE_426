@@ -67,7 +67,7 @@ architecture Behavioral of InstructionMemory is
         45 => "0000000000000000",
         46 => "1110111111001000",
         47 => "0000000000000000",
-        48 => "1100100111001011",
+        48 => "1100100111001100",
         49 => "0000000000000000",
         50 => "0100100100000100",
         51 => "0000000000000000",
@@ -89,7 +89,7 @@ architecture Behavioral of InstructionMemory is
         67 => "0000000000000000",
         68 => "0010111111000001",
         69 => "0000000000000000",
-        70 => "1011110111001001",
+        70 => "1011110111001010",
         71 => "0000000000000000",
         72 => "1101000000010011",
         73 => "0000000000000000",
@@ -114,7 +114,7 @@ architecture Behavioral of InstructionMemory is
     );
 
 begin
-    process(clk)
+    process(addr)
         variable index : integer;
     begin
 --        if rising_edge(clk) then
