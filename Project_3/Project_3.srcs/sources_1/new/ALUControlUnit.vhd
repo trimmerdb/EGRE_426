@@ -25,7 +25,7 @@ begin
                     when "011" => ALUctr <= "1001"; -- Div
                     when "100" => ALUctr <= "0010"; -- AND
                     when "101" => ALUctr <= "0011"; -- OR
-                    when "110" => ALUctr <= "0110"; -- XOR
+                    when "110" => ALUctr <= "1010"; -- XOR
                     when others => ALUctr <= "0000";
                 end case;
                         -- R-type: decode func bits

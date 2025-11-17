@@ -192,7 +192,7 @@ begin
     MUX0 : Mux2to1-- MUX0 RESERVED FOR register input
         generic map(N => 3)
         port map(
-            A => instrOut(8 downto 6),
+            A => instrOut(11 downto 9),
             B => instrOut(5 downto 3),
             Sel => regDst,
             Y => mux0Out
@@ -202,9 +202,9 @@ begin
         port map (
             clk   => clk,
             RegWr => regWrite,
-            Ra    => instrOut(11 downto 9),
-            Rb    => instrOut(8 downto 6),
-            Rw    => mux0Out,
+            Ra    => instrOut(8 downto 6),
+            Rb    => mux0Out,
+            Rw    => instrOut(11 downto 9),
             busW  => mux4Out,
             busA  => readData1,
             busB  => readData2
@@ -265,7 +265,7 @@ begin
             Carryout => open
         );
     
-    andOut <= (brancheq and Zero) or (branchlt and Negative) or (branchgt and (NOT Zero and NOT Negative));
+    andOut <= (brancheq and Zero) or (branchlt and NOT Negative) or (branchgt and (NOT Zero and Negative));
     
     DATA_MEMORY : dataMemory
         port map(
