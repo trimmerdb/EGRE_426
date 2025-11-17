@@ -8,7 +8,7 @@ entity ALU is
         A, B     : in  unsigned(N-1 downto 0);
         ALUctr   : in  unsigned(3 downto 0);
         Result   : out unsigned(N-1 downto 0);
-        Zero, Overflow, Carryout, Negative  : out STD_LOGIC
+        Zero, Overflow, Carryout, Posit  : out STD_LOGIC
     );
 end ALU;
 
@@ -202,13 +202,13 @@ begin
         end if;
     end process;
     
-    -- Negative flag
+    -- Positive flag
     process(ALUctr, alu_result)
     begin
         if ALUctr = "0001" then  -- SUB
-            Negative <= alu_result(N-1);  -- Sign bit of subtraction result
+            Posit <= alu_result(N-1);  -- Sign bit of subtraction result
         else
-            Negative <= '0';
+            Posit <= '0';
         end if;
     end process;
     Result <= alu_result;

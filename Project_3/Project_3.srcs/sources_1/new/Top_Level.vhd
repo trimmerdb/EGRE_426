@@ -26,7 +26,7 @@ architecture Behavioral of Top_Level is
     signal ALUControlOut : unsigned(3 downto 0);
     signal shift1Out : unsigned(15 downto 0);
     signal Zero : std_logic;
-    signal Negative : std_logic;
+    signal Posit : std_logic;
     signal ALU0Out : unsigned(15 downto 0);
     signal ALU1Out : unsigned(15 downto 0);
     signal andOut : std_logic;
@@ -127,7 +127,7 @@ architecture Behavioral of Top_Level is
             A, B    : in  unsigned(N-1 downto 0);
             ALUctr  : in  unsigned(3 downto 0);
             Result  : out unsigned(N-1 downto 0);
-            Zero, Overflow, Carryout, Negative : out STD_LOGIC
+            Zero, Overflow, Carryout, Posit : out STD_LOGIC
         );
     end component;
     
@@ -248,7 +248,7 @@ begin
             ALUctr   => ALUControlOut,
             Result   => ALU0Out,
             Zero     => Zero,
-            Negative => Negative,
+            Posit => Posit,
             Overflow => open,
             Carryout => open
         );
@@ -265,7 +265,7 @@ begin
             Carryout => open
         );
     
-    andOut <= (brancheq and Zero) or (branchlt and NOT Negative) or (branchgt and (NOT Zero and Negative));
+    andOut <= (brancheq and Zero) or (branchlt and NOT Posit) or (branchgt and (NOT Zero and Posit));
     
     DATA_MEMORY : dataMemory
         port map(
