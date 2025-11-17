@@ -25,8 +25,7 @@ architecture Behavioral of Top_Level is
     signal mux1Out : unsigned(15 downto 0);
     signal ALUControlOut : unsigned(3 downto 0);
     signal shift1Out : unsigned(15 downto 0);
-    signal Zero : std_logic;
-    signal Posit : std_logic;
+    signal Zero, Posit : std_logic;
     signal ALU0Out : unsigned(15 downto 0);
     signal ALU1Out : unsigned(15 downto 0);
     signal andOut : std_logic;
