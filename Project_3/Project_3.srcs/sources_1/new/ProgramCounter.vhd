@@ -16,6 +16,7 @@ end entity ProgramCounter;
 
 architecture Behavioral of ProgramCounter is
     signal pc_reg : unsigned(N-1 downto 0);
+    signal count : integer := 0;
 begin
     process(clk, rst)
     begin
@@ -23,6 +24,7 @@ begin
             pc_reg <= (others => '0');
         elsif rising_edge(clk) then
             pc_reg <= pc_in; 
+            count <= count + 1;
         end if;
     end process;
 
