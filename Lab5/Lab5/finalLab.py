@@ -1,104 +1,171 @@
-# ------------------------------------------------------------
-# cache_sim.py
-#   Simple cache simulator for word-addressed accesses.
-#   Supports:
-#       - Direct mapped (associativity = 1)
-#       - N-way set associative caches
-#       - LRU replacement
-#
-#   Grading validation example included at bottom.
-# ------------------------------------------------------------
+import math
+import argparse
+import random
 
-class Cache:
-    def __init__(self, num_words, associativity):
-        """
-        num_words      = total number of words in cache
-        associativity  = number of ways per set
-        block_size     = 1 word (fixed by assignment)
-        """
-        self.block_size = 1
-        self.num_blocks = num_words
-        self.assoc = associativity
-        self.num_sets = num_words // associativity
-
-        # For each set, maintain a list of tags (newest at end = most recently used)
-        self.sets = [[] for _ in range(self.num_sets)]
-
-    def access(self, address):
-        """
-        address: word address (NOT byte address)
-        Returns: "HIT" or "MISS"
-        """
-        block_num = address  # 1 word per block
-        set_index = block_num % self.num_sets
-        tag = block_num      # Tag is simply block_num since word blocks
-
-        the_set = self.sets[set_index]
-
-        # HIT
-        if tag in the_set:
-            # Move element to end (most recent)
-            the_set.remove(tag)
-            the_set.append(tag)
-            return "HIT"
-
-        # MISS
-        if len(the_set) < self.assoc:        # space available
-            the_set.append(tag)
-        else:                                # evict LRU
-            the_set.pop(0)                   # remove oldest
-            the_set.append(tag)
-
-        return "MISS"
-
-    def print_final_contents(self):
-        print("Final cache contents by set (each entry = tag = word address):")
-        for i, s in enumerate(self.sets):
-            print(f"  Set {i}: {s}")
+# ----------------------------
+# Cache Line
+# ----------------------------
+class CacheLine:
+    def __init__(self):
+        self.tag = None
+        self.val = None
+        self.use = -1     # used for LRU
 
 
-# ------------------------------------------------------------
-# Function for running a simulation
-# ------------------------------------------------------------
-def run_sim(address_list, num_words, associativity, label):
-    print("\n===============================")
-    print(label)
-    print("===============================\n")
+# ----------------------------
+# Main Cache Simulator
+# ----------------------------
+class CacheSimulator:
+    DIRECT = 0
+    RANDOM = 1
+    LRU = 2
 
-    cache = Cache(num_words=num_words, associativity=associativity)
+    def __init__(self, assoc, block_size, block_amt, policy, verbose):
+        self.assoc = assoc
+        self.block_size = block_size
+        self.block_amt = block_amt
+        self.policy = policy
+        self.verbose = verbose
 
-    results = []
-    for addr in address_list:
-        result = cache.access(addr)
-        results.append(result)
-        print(f"{addr}: {result}")
+        self.offset_bits = int(math.log2(block_size))
+        self.index_bits = int(math.log2(block_amt))
 
-    print("\nSummary (hits/misses):")
-    print(", ".join(results))
+        # 2D array: [way][set]
+        self.cache = [
+            [CacheLine() for _ in range(block_amt)]
+            for _ in range(assoc)
+        ]
 
-    print()
-    cache.print_final_contents()
+    # ----------------------------
+    # Convert address → tag/index/offset
+    # ----------------------------
+    def break_address(self, addr):
+        offset = addr & ((1 << self.offset_bits) - 1)
+        addr >>= self.offset_bits
+
+        index = addr & ((1 << self.index_bits) - 1)
+        addr >>= self.index_bits
+
+        tag = addr
+        return tag, index, offset
+
+    # ----------------------------
+    # Perform lookup
+    # ----------------------------
+    def access(self, addr):
+        tag, index, offset = self.break_address(addr)
+
+        # HIT?
+        for way in range(self.assoc):
+            if self.cache[way][index].tag == tag:
+                # update LRU "use" counters
+                if self.policy == self.LRU:
+                    for w in range(self.assoc):
+                        if self.cache[w][index].use > 0:
+                            self.cache[w][index].use -= 1
+                    self.cache[way][index].use = self.assoc
+                return True
+
+        # MISS → insert based on replacement policy
+        self.replace_line(tag, index, addr)
+        return False
+
+    # ----------------------------
+    # Replacement policy
+    # ----------------------------
+    def replace_line(self, tag, index, full_addr):
+        if self.policy == self.DIRECT:
+            line = self.cache[0][index]
+            line.tag = tag
+            line.val = full_addr
+
+        elif self.policy == self.RANDOM:
+            way = random.randrange(self.assoc)
+            line = self.cache[way][index]
+            line.tag = tag
+            line.val = full_addr
+
+        elif self.policy == self.LRU:
+            # find empty way (use == -1)
+            for way in range(self.assoc):
+                if self.cache[way][index].use == -1:
+                    self.cache[way][index].tag = tag
+                    self.cache[way][index].val = full_addr
+                    self.cache[way][index].use = self.assoc
+
+                    # decrement others
+                    for w in range(self.assoc):
+                        if self.cache[w][index].use > 0:
+                            self.cache[w][index].use -= 1
+                    return
+
+            # otherwise replace LRU (use == 0)
+            for way in range(self.assoc):
+                if self.cache[way][index].use == 0:
+                    self.cache[way][index].tag = tag
+                    self.cache[way][index].val = full_addr
+                    self.cache[way][index].use = self.assoc
+                else:
+                    self.cache[way][index].use -= 1
+
+    # ----------------------------
+    # Optional verbose cache print
+    # ----------------------------
+    def print_cache(self):
+        for way in range(self.assoc):
+            row = [self.cache[way][i].val for i in range(self.block_amt)]
+            print(f"{way}: {row}")
 
 
-# ------------------------------------------------------------
-# Grading Example (required to produce exact results)
-# ------------------------------------------------------------
+# ----------------------------
+# Run simulation from file
+# ----------------------------
+def run_simulator(filename, assoc, block_size, block_amt, policy, verbose):
+
+    sim = CacheSimulator(assoc, block_size, block_amt, policy, verbose)
+
+    hits = 0
+    misses = 0
+
+    with open(filename, "r") as f:
+        for line in f:
+            hex_addr = line.strip()
+            if hex_addr == "":
+                continue
+
+            addr = int(hex_addr, 16)
+
+            if sim.access(addr):
+                hits += 1
+            else:
+                misses += 1
+
+    # Results
+    total = hits + misses
+    print(f"hits: {hits}, misses: {misses}")
+    print(f"hit rate:  {100 * hits / total:.2f}%")
+    print(f"miss rate: {100 * misses / total:.2f}%")
+
+    if verbose:
+        print("\nFinal Cache State:")
+        sim.print_cache()
+
+
+# ----------------------------
+# Command-line Interface
+# ----------------------------
 if __name__ == "__main__":
-    # Word addresses given by assignment
-    example = [0, 3, 11, 16, 21, 11, 16, 48, 16]
+    parser = argparse.ArgumentParser(description="Python Cache Simulator")
 
-    # Part (a): Direct mapped, 1-way, 16 words total
-    run_sim(
-        address_list=example,
-        num_words=16,
-        associativity=1,
-        label="Part (a): Direct-mapped cache, 16 words, 1-word blocks"
-    )
+    parser.add_argument("file", help="input file of hex addresses")
+    parser.add_argument("-assoc", required=True, type=int)
+    parser.add_argument("-blocksize", required=True, type=int)
+    parser.add_argument("-blockamt", required=True, type=int)
+    parser.add_argument("-policy", required=True, type=int,
+                        help="0=direct, 1=random, 2=LRU")
+    parser.add_argument("-v", type=int, default=0)
 
-    # Part (b): 2-way set associative, 16 words total
-    run_sim(
-        address_list=example,
-        num_words=16,
-        associativity=2,
-        label="Part (b): 2-way set associative, LRU replacement"
-    )
+    args = parser.parse_args()
+
+    run_simulator(args.file, args.assoc, args.blocksize,
+                  args.blockamt, args.policy, args.v)
